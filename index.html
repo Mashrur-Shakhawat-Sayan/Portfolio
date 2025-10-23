@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mashrur Shakhawat Sayan — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">
+        <span class="intro-line">Hi, I'm</span><br>
+        <span class="name-line">Mashrur Shakhawat Sayan</span>
+      </h1>
+
+
+      <button id="theme-toggle">🌙</button>
+    </div>
+    <p class="subtitle" id="dynamic-line"></p>
+    
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+
+      <a href="#contact">Contact</a>
+    </nav>
+    <!--img src="me.jpg" alt="Profile Picture" class="profile-pic">
+
+  </header>
+
+  <-- ===== Main ===== -->
+  <main>
+    <!-- About Section -->
+   
+    <section id="about" class="about-section">
+      <div class="about-content">
+        <!-- Text -->
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hi, I’m <strong>Mashrur</strong>, a <strong>Full-Stack ML Engineer and Researcher</strong> passionate about connecting intelligence with efficiency.  
+            I graduated from <strong>BRAC University</strong> and specialize in <strong>Cloud Computing</strong>, <strong>Machine Learning</strong>, and <strong>Automation Systems</strong>.  
+            My work focuses on building scalable, data-driven applications that push the boundaries of intelligent automation — from federated learning to predictive analytics and edge computing.
+          </p>
+          <p>
+            Beyond coding, I’m fascinated by <strong>machinery and automation</strong>, where hardware and intelligence meet to create real-world impact.  
+            When I’m not building or experimenting, you’ll find me swimming, playing sports, or exploring video games — anything that challenges logic, precision, and creativity.
+          </p>
+        </div>
+
+        <!-- Profile Photo on the right -->
+        <div class="about-photo">
+          <img src="me.jpg" alt="Cheeyane" class="profile-pic" />
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Technical Skills -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Frontend:</strong> React.js, JavaScript, HTML, CSS, Flutter</li>
+        <li><strong>Backend:</strong> Django, Node.js, Express.js</li>
+        <li><strong>Database:</strong> MongoDB, MySQL, SQLite</li>
+        <li><strong>AI/ML:</strong> TensorFlow, PyTorch, Scikit-learn</li>
+        <li><strong>Other:</strong> Cloud Computing, Python Sockets, Server & Network Design</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Institution</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">2021–2025</td>
+            <td>BRAC University</td>
+            <td>B.Sc. in Computer Science and Engineering<br>CGPA: 3.13 / 4.00</td>
+          </tr>
+          <tr>
+            <td colspan="2">Specialization: Full-Stack Development, AI & ML, Cloud Computing<br>Thesis: “Using Advanced Federated Learning to Reduce Storage Cost and Latency.”</td>
+          </tr>
+          <tr>
+            <td>2018–2020</td>
+            <td>Dhaka College</td>
+            <td>Higher Secondary Certificate (HSC) — Science, GPA: 5.00 / 5.00</td>
+          </tr>
+          <tr>
+            <td>2016–2018</td>
+            <td>Government Laboratory High School</td>
+            <td>Secondary School Certificate (SSC) — Science, GPA: 5.00 / 5.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>Achievements & Activities</h2>
+      <ul>
+        <li>Executive, BRAC University Chess Club (2023)</li>
+        <li>Senior Executive, BRAC University Computer Club (2022)</li>
+        <li>Code Samurai Coding Competition (2021)</li>
+        <li>Scout (2017)</li>
+        <li>National Shapla Cub Award (2012)</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p><strong>Location:</strong> Ramna, Dhaka</p>
+      <p><strong>Email:</strong> <a href="mailto:shakhawatsayan123@gmail.com">shakhawatsayan123@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Mashrur-Shakhawat-Sayan" target="_blank">github.com/Mashrur-Shakhawat-Sayan</a></p>
+
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Built by-Mashrur Shakhawat Sayan. All rights reserved.</p>
+    <p>Page location: <span id="pageloc"></span></p>
+    <p>Last modified: <span id="lastmod"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
