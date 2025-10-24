@@ -290,7 +290,7 @@ footer {
   background-image: var(--bg-img);
   background-size: cover;
   background-position: center;
-  opacity: 0.;
+  opacity: 0.5;
   pointer-events: none;
   border-radius: 14px;
   z-index: 0;
@@ -745,3 +745,4 @@ body.dark .skills-chips span {
     grid-template-columns: 1fr;
   }
 }
+
