@@ -159,15 +159,15 @@ section {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: #1d1d1f;
+  color: var(--text); /* use main text color */
 }
 
 .about-text p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #4a4a4f;
-  margin-bottom: 1rem;
+  color: var(--text); /* use main text color */
 }
+
 
 /* Profile picture */
 .about-photo {
@@ -179,8 +179,8 @@ section {
 }
 
 .profile-pic {
-  width: 240px;
-  height: 240px;
+  width: 440px;
+  height: 440px;
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
@@ -257,3 +257,194 @@ footer {
   .about-photo { margin-top: 30px; }
   .profile-pic { width: 180px; height: 180px; }
 }
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.skill-category h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-chips span {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.skills-chips span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode adjustments */
+body.dark .skills-chips span {
+  background: var(--accent); /* same accent works in dark */
+}
+
+
+/* ===== Research Section ===== */
+.research-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.research-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.research-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.research-card p {
+  color: var(--text);
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+.research-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.research-link:hover {
+  text-decoration: underline;
+}
+/* Project card: image left / right layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Card base */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover lift */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* Image box: fixed rounded square */
+.project-card .project-image {
+  width: 120px;            /* square size */
+  height: 120px;           /* square size */
+  flex: 0 0 120px;         /* prevent shrinking/growing */
+  border-radius: 16px;     /* rounded-square */
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.project-card .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* keep aspect, fill square */
+  display: block;
+}
+
+/* Content area */
+.project-card .project-content {
+  flex: 1;
+}
+
+/* Reverse layout (image on right) */
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Make sure text alignment looks good when reversed */
+.project-card.reverse .project-content {
+  text-align: left;
+}
+
+/* On narrow screens, stack vertically with centered image */
+@media (max-width: 800px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .project-card.reverse { /* keep same behavior on mobile */
+    flex-direction: column;
+  }
+
+  .project-card .project-image {
+    width: 160px;  /* slightly larger on mobile if you prefer */
+    height: 160px;
+    flex: 0 0 160px;
+  }
+
+  .project-card .project-content { text-align: center; }
+}
+/* ===== Back to Top Button ===== */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: all 0.3s ease;
+  display: none; /* hidden initially */
+  z-index: 9999;
+}
+
+#backToTop:hover {
+  background: #0073e6;
+  transform: translateY(-3px);
+}
+
+/* Show when scrolled down */
+#backToTop.show {
+  display: block;
+  opacity: 0.95;
+}
+
