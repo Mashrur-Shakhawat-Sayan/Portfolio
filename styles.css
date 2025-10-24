@@ -1,23 +1,24 @@
 :root {
-  --bg: #f8faff;
-  --text: #222;
-  --accent: #004d99;
-  --card: #ffffff;
-  --muted: #555;
+  --bg: #f8faff;          /* light mode background */
+  --text: #222;            /* main text */
+  --accent: #004d99;       /* keep that subtle blue accent */
+  --card: #ffffff;          /* cards stay clean white */
+  --muted: #555;            /* muted text */
   --shadow: rgba(0, 0, 0, 0.1);
-  --section-bg: #ffffff; /* light mode */
+  --section-bg: #ffffff;    /* section bg same as card for light mode */
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 body.dark {
-  --bg: #1a1b1e;
-  --text: #f4f4f4;
-  --card: #2a2b30;
-  --accent: #4da3ff;
-  --muted: #aaa;
-  --shadow: rgba(255, 255, 255, 0.05);
-  --section-bg: #2f3035; /* slightly lighter than dark page bg */
+  --bg: #0d0a12;           /* near-black background */
+  --text: #d8c7f5;         /* soft light purple text for readability */
+  --card: #1f1331;         /* deep dark purple card background */
+  --accent: #9b59b6;       /* strong mature purple for highlights/buttons */
+  --muted: #a084c2;        /* muted complementary purple for secondary text */
+  --shadow: rgba(155, 89, 182, 0.35); /* purple-tinted shadows for depth */
+  --section-bg: #2a1d3f;   /* slightly lighter dark purple for sections */
 }
+
 
 * {
   box-sizing: border-box;
@@ -159,15 +160,15 @@ section {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: #1d1d1f;
+  color: var(--text); /* use main text color */
 }
 
 .about-text p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #4a4a4f;
-  margin-bottom: 1rem;
+  color: var(--text); /* use main text color */
 }
+
 
 /* Profile picture */
 .about-photo {
@@ -179,8 +180,8 @@ section {
 }
 
 .profile-pic {
-  width: 240px;
-  height: 240px;
+  width: 440px;
+  height: 440px;
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
@@ -256,4 +257,491 @@ footer {
   .about-content { flex-direction: column; text-align: center; }
   .about-photo { margin-top: 30px; }
   .profile-pic { width: 180px; height: 180px; }
+}
+
+
+/* Skills container grid */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Skill card */
+.skill-category {
+  position: relative;
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 8px 24px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text);
+  background: linear-gradient(145deg, var(--card), var(--section-bg));
+}
+
+/* Background image using CSS variable */
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.;
+  pointer-events: none;
+  border-radius: 14px;
+  z-index: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover lift effect */
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.skill-category:hover::before {
+  opacity: 0.12; /* slightly stronger on hover */
+}
+
+/* Content above background */
+.skill-category h3,
+.skills-chips {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Category titles */
+.skill-category h3 {
+  margin-bottom: 15px;
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Chips */
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skills-chips span {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(0, 77, 153, 0.12);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.skills-chips span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: rgba(0, 77, 153, 0.25);
+}
+
+/* Dark mode adjustments */
+body.dark .skill-category::before {
+  filter: brightness(0.5) contrast(0.8);
+}
+
+body.dark .skills-chips span {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+
+
+
+/* ===== Research Section ===== */
+.research-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.research-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.research-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.research-card p {
+  color: var(--text);
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+.research-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.research-link:hover {
+  text-decoration: underline;
+}
+/* Project card: image left / right layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Card base */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover lift */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+/* Image box: fixed rounded square */
+.project-card .project-image {
+  width: 120px;            /* square size */
+  height: 120px;           /* square size */
+  flex: 0 0 120px;         /* prevent shrinking/growing */
+  border-radius: 16px;     /* rounded-square */
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.project-card .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* keep aspect, fill square */
+  display: block;
+}
+
+/* Content area */
+.project-card .project-content {
+  flex: 1;
+}
+
+/* Reverse layout (image on right) */
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Make sure text alignment looks good when reversed */
+.project-card.reverse .project-content {
+  text-align: left;
+}
+
+/* On narrow screens, stack vertically with centered image */
+@media (max-width: 800px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .project-card.reverse { /* keep same behavior on mobile */
+    flex-direction: column;
+  }
+
+  .project-card .project-image {
+    width: 160px;  /* slightly larger on mobile if you prefer */
+    height: 160px;
+    flex: 0 0 160px;
+  }
+
+  .project-card .project-content { text-align: center; }
+}
+/* ===== Floating Buttons ===== */
+
+/* Back to Top Button */
+
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--shadow);
+  display: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#backToTop.show {
+  display: inline-block;
+}
+
+#backToTop:hover {
+  background: #0073e6;
+  transform: translateY(-3px);
+}
+
+
+/* Theme Toggle Button */
+/* === Unified Dark Mode Buttons === */
+#theme-toggle,
+#theme-toggle-fixed {
+  background: linear-gradient(135deg, #0e0a7b, #2e0bdc);
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(42, 6, 219, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Header button */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Floating button for scroll */
+#theme-toggle-fixed {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#theme-toggle-fixed.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover effect (both buttons) */
+#theme-toggle:hover,
+#theme-toggle-fixed:hover {
+  background: linear-gradient(135deg, #555, #333);
+  transform: translateY(-3px);
+}
+
+
+.project-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures it fills container like images */
+  display: block; /* remove any inline-block spacing issues */
+}
+.project-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.achievement-card {
+  background: var(--card); /* use theme variable */
+  color: var(--text);      /* use theme variable */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px var(--shadow);
+}
+
+.achievement-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--accent); /* accent for headings */
+}
+
+.achievement-card p {
+  font-size: 0.95rem;
+  color: var(--muted);   /* muted text for description */
+  line-height: 1.4;
+}
+.contact-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+/* Wrapper for info + form */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Info Cards */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--card);
+  padding: 18px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+.info-icon {
+  font-size: 1.8rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.info-card h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.info-card p a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.info-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+  background: var(--card);
+  padding: 25px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form h3 {
+  margin-bottom: 15px;
+  color: var(--accent);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 77, 153, 0.2);
+}
+
+/* Submit Button */
+.contact-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: #0073e6;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
 }

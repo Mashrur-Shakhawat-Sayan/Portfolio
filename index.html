@@ -14,32 +14,29 @@
         <span class="intro-line">Hi, I'm</span><br>
         <span class="name-line">Mashrur Shakhawat Sayan</span>
       </h1>
-
-
-      <button id="theme-toggle">🌙</button>
+      <!--button id="theme-toggle">🌙</button-->
     </div>
+
     <p class="subtitle" id="dynamic-line"></p>
-    
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="hobbies.html">Hobbies</a>
-
-      <a href="#contact">Contact</a>
+    <nav class="modern-nav">
+      <a href="#about"><span class="nav-icon">👤</span> About</a>
+      <a href="#research"><span class="nav-icon">🔬</span> Research</a>
+      <a href="#projects"><span class="nav-icon">💡</span> Projects</a>
+      <a href="#skills"><span class="nav-icon">🛠️</span> Skills</a>
+      <a href="#education"><span class="nav-icon">🎓</span> Education</a>
+      <a href="#achievements"><span class="nav-icon">🏆</span> Activities</a>
+      <a href="#contact"><span class="nav-icon">✉️</span> Contact</a>
     </nav>
-    <!--img src="me.jpg" alt="Profile Picture" class="profile-pic">
 
   </header>
 
-  <-- ===== Main ===== -->
+  <!-- ===== Main ===== -->
   <main>
+
     <!-- About Section -->
-   
     <section id="about" class="about-section">
       <div class="about-content">
-        <!-- Text -->
         <div class="about-text">
           <h2>About Me</h2>
           <p>
@@ -53,30 +50,175 @@
           </p>
         </div>
 
-        <!-- Profile Photo on the right -->
         <div class="about-photo">
-          <img src="me.jpg" alt="Mashrur" class="profile-pic" />
+          <img src="me.JPG" alt="Mashrur" class="profile-pic" />
         </div>
       </div>
     </section>
 
+    <!-- Research Section -->
+    <section id="research" class="section">
+      <h2>Research</h2>
 
+      <div class="research-container">
+        <div class="research-card">
+          <h3>Optimizing Federated Learning for Storage Efficiency</h3>
+          <p><strong>Institution:</strong> BRAC University</p>
+          <p><strong>Focus:</strong> Data Compression in Federated Learning</p>
+          <p>
+            This research explored reducing communication and storage overhead in federated learning systems through intelligent data compression and selective model updates.
+            It proposed a hybrid optimization technique that enhances model convergence without compromising privacy or accuracy.
+          </p>
+          <p><strong>Key Outcome:</strong> The model reduced latency by 23% and communication load by 35%, improving training scalability for edge devices.</p>
+          <a href="Pre Thesis 2 Report (1).pdf" target="_blank" class="research-link">View Full Paper ↗</a>
+        </div>
 
-
-
-    <!-- Technical Skills -->
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul class="skills-list">
-        <li><strong>Frontend:</strong> React.js, JavaScript, HTML, CSS, Flutter</li>
-        <li><strong>Backend:</strong> Django, Node.js, Express.js</li>
-        <li><strong>Database:</strong> MongoDB, MySQL, SQLite</li>
-        <li><strong>AI/ML:</strong> TensorFlow, PyTorch, Scikit-learn</li>
-        <li><strong>Other:</strong> Cloud Computing, Python Sockets, Server & Network Design</li>
-      </ul>
+        <div class="research-card">
+          <h3>Smart Water Pollution Detection using IoT and Machine Learning</h3>
+          <p><strong>Institution:</strong> BRAC University</p>
+          <p><strong>Focus:</strong> Real-time Environmental Monitoring</p>
+          <p>
+            Designed an IoT-driven water monitoring system using sensors and machine learning algorithms to classify pollution levels from collected data streams.
+            The system automatically detects anomalies and provides alerts for proactive environmental management.
+          </p>
+          <p><strong>Key Outcome:</strong> Achieved 92% detection accuracy in classifying contaminated water samples using optimized ML models.</p>
+          <a href="424_project (3).pdf" target="_blank" class="research-link">View Full Paper ↗</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Education -->
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+  <!-- Project 1: image LEFT (default) -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="animal.jpeg" alt="Animal Shelter Management Project">
+    </div>
+    <div class="project-content">
+      <h3>Animal Shelter Management System</h3>
+      <p>
+        A full-stack management platform for tracking animals, medical care, and adoptions.
+        Reduced data errors by 45% through optimized backend validation and automated reporting.
+      </p>
+    </div>
+  </article>
+
+  <!-- Project 2: image RIGHT -->
+  <article class="project-card reverse">
+    <div class="project-image">
+      <img src="emerg.png" alt="Emergency Resource Automation">
+    </div>
+    <div class="project-content">
+      <h3>Emergency Resource Automation</h3>
+      <p>
+        Built a real-time emergency management system with AI-driven alert classification.
+        Improved response time by 40% and integrated IoT-based alert notifications.
+      </p>
+    </div>
+  </article>
+
+  <!-- Project 3: Video -->
+  <article class="project-card">
+  <div class="project-image">
+    <video muted loop playsinline id="fpvVideo" controls>
+      <source src="videos/robot.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="project-content">
+    <h3>FPV Bomb Defusing Robot</h3>
+    <p>
+      Designed microcontroller logic for robotic arm control and power safety checks.
+      Reduced failure rate by 50% and improved motion precision in high-risk operations.
+    </p>
+  </div>
+</article>
+
+
+
+  <!-- Project 4: image RIGHT -->
+  <article class="project-card reverse">
+    <div class="project-image">
+      <img src="student.jpeg" alt="Student System">
+    </div>
+    <div class="project-content">
+      <h3>Student Information System</h3>
+      <p>
+        Developed a secure full-stack web app for managing student records and analytics.
+        Optimized SQL queries to reduce load times by 60% and improve scalability.
+      </p>
+    </div>
+  </article>
+</div>
+
+          
+    </section>
+
+   <section id="skills" class="section skills-section">
+    <h2>Technical Skills</h2>
+
+    <div class="skills-container">
+      <!-- Frontend + UI -->
+      <div class="skill-category" style="--bg-img: url('ui.png');">
+        <h3>Frontend & UI</h3>
+        <div class="skills-chips">
+          <span>React.js</span>
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Flutter</span>
+        </div>
+      </div>
+
+      <!-- Backend & APIs -->
+      <div class="skill-category" style="--bg-img: url('images/back.jpeg');">
+        <h3>Backend & APIs</h3>
+        <div class="skills-chips">
+          <span>Django</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+        </div>
+      </div>
+
+      <!-- Databases & Storage -->
+      <div class="skill-category" style="--bg-img: url('images/data.png');">
+        <h3>Databases & Storage</h3>
+        <div class="skills-chips">
+          <span>MongoDB</span>
+          <span>MySQL</span>
+          <span>SQLite</span>
+        </div>
+      </div>
+
+      <!-- AI / ML -->
+      <div class="skill-category" style="--bg-img: url('images/AI.png');">
+        <h3>AI / ML</h3>
+        <div class="skills-chips">
+          <span>TensorFlow</span>
+          <span>PyTorch</span>
+          <span>Scikit-learn</span>
+        </div>
+      </div>
+
+      <!-- Cloud & Networking -->
+      <div class="skill-category" style="--bg-img: url('images/cloud.png');">
+        <h3>Cloud & Networking</h3>
+        <div class="skills-chips">
+          <span>Cloud Computing</span>
+          <span>AWS</span>
+          <span>Python Sockets</span>
+          <span>Server & Network Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <!-- Education Section -->
     <section id="education">
       <h2>Education</h2>
       <table>
@@ -110,45 +252,107 @@
       </table>
     </section>
 
-    
-    <!-- Achievements -->
-    <section id="achievements">
+    <!-- Achievements / Extracurriculars -->
+    <section id="achievements" class="section">
       <h2>Achievements & Activities</h2>
-      <ul>
-        <li>Executive, BRAC University Chess Club (2023)</li>
-        <li>Senior Executive, BRAC University Computer Club (2022)</li>
-        <li>Code Samurai Coding Competition (2021)</li>
-        <li>Scout (2017)</li>
-        <li>National Shapla Cub Award (2012)</li>
-      </ul>
+      
+      <div class="achievements-container">
+        <div class="achievement-card">
+          <h3>♟ Executive, BRAC University Chess Club</h3>
+          <p><em>2023</em> — Led club activities, organized tournaments, and promoted strategic thinking across campus.</p>
+        </div>
+
+        <div class="achievement-card">
+          <h3>💻 Senior Executive, BRAC University Computer Club</h3>
+          <p><em>2022</em> — Coordinated coding events, hackathons, and workshops for fellow students.</p>
+        </div>
+
+        <div class="achievement-card">
+          <h3>🏆 Participant, Code Samurai National Coding Competition</h3>
+          <p><em>2021</em> — Competed at a national level, showcasing problem-solving and programming skills.</p>
+        </div>
+
+        <div class="achievement-card">
+          <h3>🌍 Scout Leader, Bangladesh Scouts</h3>
+          <p><em>2017</em> — Mentored younger scouts, led outdoor activities, and promoted teamwork and discipline.</p>
+        </div>
+
+        <div class="achievement-card">
+          <h3>🎖 Recipient of National Shapla Cub Award</h3>
+          <p><em>2012</em> — Recognized for dedication, leadership, and outstanding performance in scouting.</p>
+        </div>
+      </div>
     </section>
+
 
     <!-- Contact -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p><strong>Location:</strong> Ramna, Dhaka</p>
-      <p><strong>Email:</strong> <a href="mailto:shakhawatsayan123@gmail.com">shakhawatsayan123@gmail.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/Mashrur-Shakhawat-Sayan" target="_blank">github.com/Mashrur-Shakhawat-Sayan</a></p>
+    <section id="contact" class="section contact-section">
+    <h2>Contact Me</h2>
+    <p class="contact-intro">
+      I’m always open to new collaborations, exciting projects, or just connecting with like-minded professionals. 
+      Whether you want to discuss ideas, offer opportunities, or just say hi, feel free to reach out!
+    </p>
 
-      <form id="contact-form" action="#" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+    <div class="contact-wrapper">
+      <!-- Info Cards -->
+      <div class="contact-info">
+        <div class="info-card">
+          <span class="info-icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Ramna, Dhaka</p>
+          </div>
+        </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+        <div class="info-card">
+          <span class="info-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:shakhawatsayan123@gmail.com">shakhawatsayan123@gmail.com</a></p>
+          </div>
+        </div>
 
-        <button type="submit">Send</button>
+        <div class="info-card">
+          <span class="info-icon">💻</span>
+          <div>
+            <h4>GitHub</h4>
+            <p><a href="https://github.com/Mashrur-Shakhawat-Sayan" target="_blank">github.com/Mashrur-Shakhawat-Sayan</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form" action="#" method="post">
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message here..."></textarea>
+        </div>
+        <button type="submit">Send Message</button>
       </form>
-    </section>
+    </div>
+  </section>
+
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Built by-Mashrur Shakhawat Sayan. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Built by Mashrur Shakhawat Sayan. All rights reserved.</p>
     <p>Page location: <span id="pageloc"></span></p>
     <p>Last modified: <span id="lastmod"></span></p>
   </footer>
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">Back to Top</button>
+  <!-- Dark Mode Duplicate for scroll -->
+  <button id="theme-toggle">🌙</button> <!-- in the header -->
+  <button id="theme-toggle-fixed" title="Toggle Dark Mode">🌙</button> <!-- floating scroll one -->
+
+  
+  
 
   <script src="script.js"></script>
 </body>
 </html>
-
