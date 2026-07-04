@@ -1,0 +1,27 @@
+FINAL STRUCTURAL CHECK — 4 JULY 2026
+====================================
+
+Passed
+------
+- Homepage has a valid title and SEO description.
+- Canonical, Open Graph, Twitter Card, and Person structured data are present.
+- All homepage internal section links point to existing IDs.
+- No duplicate IDs were found in index.html.
+- sitemap.xml parses as valid XML.
+- robots.txt points to sitemap.xml.
+- Manifest icon paths exist.
+- Favicon files were generated in ICO, SVG, and PNG formats.
+- Open Graph image is 1200 × 630 pixels.
+- Mobile app icons are 192 × 192 and 512 × 512 pixels.
+- The custom 404 page uses the main portfolio stylesheet.
+
+Check in your existing project folder
+-------------------------------------
+- assets/images/profile.jpg
+- assets/certificates/html-development.jpg
+- assets/cv/Mashrur-Shakhawat-Sayan-CV.pdf
+- projects.html
+
+The HTML development certificate image was not present in the known asset list from the project review. If that image does not exist in your folder, remove that certificate card or add the correct file before deployment.
+
+A live visual and Lighthouse test should be run after these files are merged with all existing project assets and deployed at the final public URL.

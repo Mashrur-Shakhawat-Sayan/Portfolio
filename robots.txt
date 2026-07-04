@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/sitemap.xml

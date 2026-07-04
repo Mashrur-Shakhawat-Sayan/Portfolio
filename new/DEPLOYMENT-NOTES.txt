@@ -1,0 +1,40 @@
+PORTFOLIO PRODUCTION PACKAGE
+============================
+
+Files to copy into E:\Portfolio-V2
+-----------------------------------
+index.html
+404.html
+robots.txt
+sitemap.xml
+site.webmanifest
+css/style.css
+js/script.js
+assets/icons/*
+assets/images/og-image.png
+
+Configured public URL
+---------------------
+https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/
+
+This URL was inferred from your GitHub username and local folder name.
+If your final deployed URL is different, replace every occurrence of:
+https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/
+
+in these files:
+- index.html
+- robots.txt
+- sitemap.xml
+
+Deployment checklist
+--------------------
+1. Copy the package files into the matching folders in E:\Portfolio-V2.
+2. Keep your existing project images, reports, videos, certificates, and CV.
+3. Confirm that projects.html exists before deployment.
+4. Deploy the repository using GitHub Pages or your chosen host.
+5. Open the live site and test the social preview after deployment.
+6. Submit sitemap.xml through Google Search Console after the live URL is final.
+
+Important
+---------
+A sitemap requires an absolute public URL. Update it if the inferred URL is not your actual deployment URL.
