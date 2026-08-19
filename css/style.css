@@ -35,51 +35,1023 @@
 }
 
 body.light-theme {
-  --background: #e5ebf1;
-  --background-soft: #dbe3eb;
-  --surface: #f0f4f7;
-  --surface-light: #e3eaf0;
-  --border: rgba(30, 41, 59, 0.14);
+  /* "Old notebook" light theme: warm parchment paper with amber/gold ink
+     instead of a cool blue-gray palette. Dark theme is untouched. */
+  --background: #f2e6c8;
+  --background-soft: #ecdcb4;
+  --surface: #fbf3df;
+  --surface-light: #f4e8c9;
+  --border: rgba(120, 72, 22, 0.22);
 
-  --primary: #0369a1;
-  --primary-dark: #075985;
-  --accent: #4f46e5;
+  --primary: #c2570c;
+  --primary-dark: #953f08;
+  --accent: #b8860b;
 
-  --text: #172033;
-  --text-soft: #334155;
-  --muted: #64748b;
+  --text: #3b2a15;
+  --text-soft: #5c4526;
+  --muted: #7a6440;
 
-  --shadow: 0 18px 45px rgba(30, 41, 59, 0.12);
+  --shadow: 0 14px 32px rgba(92, 55, 13, 0.16);
 }
 
-body.light-theme .site-header {
-  background: rgba(229, 235, 241, 0.9);
+body.light-theme .skip-link {
+  color: #fffaf0;
 }
 
 body.light-theme .button-primary {
-  background: linear-gradient(135deg, #0284c7, #4f46e5);
-  color: #ffffff;
+  background: linear-gradient(135deg, #c2570c, #b8860b);
+  color: #fffaf0;
 }
 
+/* Fix: this chip had a hardcoded dark background, so light-theme text
+   (also dark) was nearly unreadable against it. */
+body.light-theme .availability-badge {
+  border-color: rgba(194, 87, 12, 0.28);
+  background: rgba(255, 250, 240, 0.72);
+  color: var(--text-soft);
+}
+
+/* Decorative glow blobs were tuned for a dark canvas; kept faint and
+   re-hued warm here so they read as soft page-shadow, not a haze. */
 body.light-theme .hero::before {
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(194, 87, 12, 0.07);
 }
 
 body.light-theme .hero::after {
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(184, 134, 11, 0.06);
+}
+
+body.light-theme .hero-image-wrapper::after {
+  background: linear-gradient(145deg, rgba(194, 87, 12, 0.14), rgba(184, 134, 11, 0.08));
+}
+
+body.light-theme .research-section::before {
+  background: rgba(194, 87, 12, 0.06);
+}
+
+body.light-theme .activities-section::before {
+  background: rgba(184, 134, 11, 0.06);
+}
+
+body.light-theme .contact-section {
+  background:
+    linear-gradient(135deg, rgba(194, 87, 12, 0.07), rgba(184, 134, 11, 0.05)),
+    var(--background-soft);
+}
+
+body.light-theme .site-footer {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(194, 87, 12, 0.05), transparent 28%),
+    radial-gradient(circle at 88% 90%, rgba(184, 134, 11, 0.05), transparent 28%),
+    var(--background);
 }
 
 body.light-theme .research-cloud-visual {
   background:
-    radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.15), transparent 34%),
-    radial-gradient(circle at 78% 72%, rgba(99, 102, 241, 0.12), transparent 34%),
-    linear-gradient(135deg, #d8e1e9, #edf2f6);
+    radial-gradient(circle at 25% 25%, rgba(194, 87, 12, 0.14), transparent 34%),
+    radial-gradient(circle at 78% 72%, rgba(184, 134, 11, 0.11), transparent 34%),
+    linear-gradient(135deg, #ecdcb4, #fbf3df);
 }
 
 body.light-theme .cloud-stack span {
-  border-color: rgba(3, 105, 161, 0.25);
-  background: rgba(240, 244, 247, 0.9);
+  border-color: rgba(194, 87, 12, 0.28);
+  background: rgba(251, 243, 223, 0.92);
   color: var(--text);
+}
+
+/* Ruled-paper texture + red margin rule, notebook-style. Confined to the
+   hero's existing decorative grid layer so it never sits under text. */
+body.light-theme .hero-grid {
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 32px,
+    rgba(92, 69, 38, 0.16) 32px,
+    rgba(92, 69, 38, 0.16) 33px
+  );
+  background-size: auto;
+}
+
+body.light-theme .hero-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 72px;
+  width: 2px;
+  background: rgba(178, 48, 32, 0.32);
+}
+
+/* ==========================================================================
+   Live background graphics (light theme only)
+   --------------------------------------------------------------------------
+   Small hand-drawn-style doodles that gently drift/spin/pulse across the
+   page — hero, experience, research, projects, skills, certificates,
+   education, journey, and beyond-the-code. Icons are defined once as SVG
+   <symbol>s in index.html and reused everywhere via <use>, so this whole
+   system is pure inline markup + CSS: no images, no icon fonts, no JS,
+   nothing extra to host. Hidden entirely in dark theme. Sized with
+   clamp() so they scale down (never hidden) on phones, per request that
+   they stay visible and lively on mobile too. Respects
+   prefers-reduced-motion via the global rule further down this file.
+   ========================================================================== */
+
+.notebook-doodles,
+.section-doodles {
+  display: none;
+}
+
+body.light-theme .notebook-doodles,
+body.light-theme .section-doodles {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/*
+  isolation: isolate opens a fresh stacking context on each section, and
+  the doodle layer's negative z-index then paints it at the very back of
+  that context — behind the section's normal-flow text and cards, no
+  matter how large the doodles get. Without isolation, an absolutely
+  positioned z-index:0 layer paints ABOVE non-positioned in-flow content
+  per CSS stacking rules, which is fine for small corner icons but would
+  let large "prominent background" doodles cover real content.
+*/
+#experience,
+.research-section,
+#featured-projects,
+#skills,
+#certificates,
+#education,
+#journey,
+.activities-section,
+.projects-hero,
+#research,
+#ml-ai,
+#nlp,
+#fullstack,
+#hardware {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.doodle {
+  position: absolute;
+  height: auto;
+}
+
+/* Hero: pencil, paperclip, coffee ring, star, self-drawing scribble, idea bulb */
+.doodle-pencil {
+  top: 9%;
+  right: 7%;
+  width: clamp(54px, 9vw, 86px);
+  color: rgba(194, 87, 12, 0.42);
+  animation: doodlePencil 7s ease-in-out infinite;
+}
+
+.doodle-clip {
+  top: 46%;
+  right: 3%;
+  width: clamp(26px, 4.6vw, 38px);
+  color: rgba(92, 69, 38, 0.38);
+  animation: doodleClip 8.5s ease-in-out infinite 0.6s;
+}
+
+.doodle-stain {
+  bottom: 5%;
+  left: 3%;
+  width: clamp(100px, 16vw, 160px);
+  color: rgba(92, 69, 38, 0.26);
+  animation: doodleStain 15s ease-in-out infinite;
+}
+
+.doodle-star {
+  top: 7%;
+  left: 6%;
+  width: clamp(20px, 3.6vw, 28px);
+  color: rgba(184, 134, 11, 0.65);
+  animation: doodleStar 3.2s ease-in-out infinite;
+}
+
+/* Self-drawing squiggle: a wide, flat underline-style scribble that
+   "sketches itself" on a loop via stroke-dasharray/offset, sitting under
+   the hero copy like a hand-drawn flourish. */
+.doodle-scribble {
+  top: 63%;
+  left: 32%;
+  width: clamp(140px, 20vw, 220px);
+  color: rgba(194, 87, 12, 0.3);
+  stroke-dasharray: 220;
+  animation: doodleDraw 6.5s ease-in-out infinite;
+}
+
+.doodle-lightbulb {
+  top: 3%;
+  right: 26%;
+  width: clamp(40px, 6.6vw, 62px);
+  color: rgba(184, 134, 11, 0.4);
+  animation: doodlePulseSoft 4.5s ease-in-out infinite 0.3s;
+}
+
+/* A loose, hand-drawn loop circling "Hello, I am" the way you'd mark a
+   short line in a notebook — same self-drawing technique as the scribble,
+   just closed into a circle instead of a wavy underline. */
+.doodle-circle-mark {
+  top: 11.5%;
+  left: 5%;
+  width: clamp(130px, 13vw, 165px);
+  color: rgba(178, 48, 32, 0.36);
+  stroke-dasharray: 620;
+  animation: doodleDraw 7s ease-in-out infinite 0.5s;
+}
+
+/* A small, self-drawing spiral sitting in the quiet gap between the
+   intro copy and the portrait — a light-theme-only flourish, kept clear
+   of every heading/paragraph/button so it never sits behind wording. */
+.doodle-spiral {
+  top: 38%;
+  left: 58%;
+  width: clamp(30px, 3.4vw, 46px);
+  color: rgba(184, 134, 11, 0.4);
+  stroke-dasharray: 320;
+  animation: doodleDraw 9s ease-in-out infinite 0.8s;
+}
+
+/* Experience: briefcase, necktie, clock, document */
+.doodle-briefcase {
+  top: 8%;
+  right: 5%;
+  width: clamp(48px, 8vw, 76px);
+  color: rgba(92, 69, 38, 0.34);
+  animation: doodleFloatSlow 8s ease-in-out infinite;
+}
+
+.doodle-necktie {
+  bottom: 8%;
+  left: 4%;
+  width: clamp(30px, 5.2vw, 44px);
+  color: rgba(194, 87, 12, 0.38);
+  transform-origin: top center;
+  animation: doodleSway 6s ease-in-out infinite;
+}
+
+.doodle-clock {
+  top: 10%;
+  left: 6%;
+  width: clamp(38px, 6.4vw, 58px);
+  color: rgba(194, 87, 12, 0.28);
+  animation: doodleFloatSlow2 7.5s ease-in-out infinite 0.2s;
+}
+
+.doodle-document {
+  bottom: 9%;
+  right: 7%;
+  width: clamp(36px, 6vw, 54px);
+  color: rgba(92, 69, 38, 0.28);
+  animation: doodleFloatSlow 9s ease-in-out infinite 0.5s;
+}
+
+/* Research: microscope, flask, spark, camera, chart */
+.doodle-microscope {
+  top: 9%;
+  right: 5%;
+  width: clamp(50px, 8.2vw, 78px);
+  color: rgba(92, 69, 38, 0.36);
+  animation: doodleFloatSlow 9s ease-in-out infinite;
+}
+
+.doodle-flask {
+  bottom: 7%;
+  left: 4%;
+  width: clamp(42px, 7vw, 64px);
+  color: rgba(194, 87, 12, 0.36);
+  animation: doodleFloatSlow2 10s ease-in-out infinite 0.4s;
+}
+
+.doodle-spark {
+  width: clamp(26px, 4.2vw, 38px);
+  color: rgba(184, 134, 11, 0.55);
+  animation: doodlePulseSoft 3.4s ease-in-out infinite;
+}
+
+.doodle-spark-research {
+  bottom: 6%;
+  right: 11%;
+}
+
+.doodle-spark-projects {
+  bottom: 6%;
+  left: 10%;
+}
+
+.doodle-camera {
+  top: 34%;
+  left: 2%;
+  width: clamp(38px, 6.4vw, 58px);
+  color: rgba(92, 69, 38, 0.3);
+  animation: doodleFloatSlow 8s ease-in-out infinite 0.2s;
+}
+
+.doodle-chart {
+  top: 42%;
+  right: 2%;
+  width: clamp(42px, 7vw, 62px);
+  color: rgba(194, 87, 12, 0.3);
+  animation: doodleFloatSlow2 9.5s ease-in-out infinite 0.3s;
+}
+
+/* Projects: wrench, keyboard, spark (reused above), explosion */
+.doodle-wrench {
+  top: 19%;
+  right: 2%;
+  width: clamp(42px, 7vw, 64px);
+  color: rgba(194, 87, 12, 0.38);
+  animation: doodleSway 5.5s ease-in-out infinite;
+}
+
+.doodle-keyboard {
+  bottom: 8%;
+  right: 4%;
+  width: clamp(50px, 8.4vw, 78px);
+  color: rgba(92, 69, 38, 0.32);
+  animation: doodleFloatSlow2 9s ease-in-out infinite;
+}
+
+/* Mostly off-stage on the left edge so a large "burst" can be prominent
+   without ever sitting on top of card copy — the sliver that peeks past
+   the card edge reads as an explosion bleeding into the section. */
+.doodle-explosion {
+  top: 55%;
+  left: -4%;
+  width: clamp(170px, 24vw, 280px);
+  color: rgba(184, 134, 11, 0.14);
+  animation: doodleBurst 5s ease-in-out infinite;
+}
+
+/* Skills: gear (continuous spin), chip */
+.doodle-gear {
+  top: 9%;
+  right: 6%;
+  width: clamp(32px, 5.5vw, 48px);
+  color: rgba(184, 134, 11, 0.4);
+  animation: doodleSpinSlow 12s linear infinite;
+}
+
+.doodle-chip {
+  bottom: 7%;
+  left: 5%;
+  width: clamp(30px, 5vw, 44px);
+  color: rgba(92, 69, 38, 0.32);
+  animation: doodleFloatSlow 8.5s ease-in-out infinite;
+}
+
+/* Certificates: trophy, medal (both a little playful spin/swing), confetti */
+.doodle-trophy {
+  top: 8%;
+  right: 5%;
+  width: clamp(40px, 6.6vw, 60px);
+  color: rgba(184, 134, 11, 0.44);
+  animation: doodleSpinSlow 16s linear infinite;
+}
+
+.doodle-medal {
+  bottom: 7%;
+  left: 5%;
+  width: clamp(32px, 5.2vw, 46px);
+  color: rgba(194, 87, 12, 0.4);
+  transform-origin: top center;
+  animation: doodleSway 5s ease-in-out infinite;
+}
+
+.doodle-confetti {
+  width: clamp(30px, 5vw, 44px);
+  color: rgba(184, 134, 11, 0.5);
+  animation: doodleSway 5s ease-in-out infinite;
+}
+
+.doodle-confetti-a {
+  top: 30%;
+  right: 2%;
+}
+
+.doodle-confetti-b {
+  bottom: 20%;
+  left: 44%;
+  animation-delay: 0.7s;
+}
+
+/* ==========================================================================
+   Project archive page (projects.html) doodles
+   --------------------------------------------------------------------------
+   Same sprite-and-clamp system as the homepage, applied to the archive
+   hero and its five category sections. A few icons (microscope, flask,
+   camera, chart, gear, chip, keyboard, document) are shared with the
+   homepage sections and simply reuse their existing position/size rules
+   above, since the corner-accent placement works the same way regardless
+   of which page the section lives on.
+   ========================================================================== */
+
+/* Archive hero: folder, magnifier */
+.doodle-folder {
+  top: 12%;
+  right: 6%;
+  width: clamp(46px, 7.6vw, 70px);
+  color: rgba(92, 69, 38, 0.32);
+  animation: doodleFloatSlow 9s ease-in-out infinite;
+}
+
+.doodle-magnifier {
+  bottom: 10%;
+  left: 5%;
+  width: clamp(40px, 6.6vw, 60px);
+  color: rgba(194, 87, 12, 0.34);
+  animation: doodleSway 6.5s ease-in-out infinite;
+}
+
+/* Research archive: cloud, droplet (microscope + flask reuse the
+   homepage research positions above) */
+.doodle-cloud {
+  top: 9%;
+  left: 4%;
+  width: clamp(40px, 6.6vw, 60px);
+  color: rgba(92, 69, 38, 0.3);
+  animation: doodleFloatSlow2 9s ease-in-out infinite 0.3s;
+}
+
+.doodle-droplet {
+  bottom: 8%;
+  right: 5%;
+  width: clamp(34px, 5.6vw, 50px);
+  color: rgba(194, 87, 12, 0.34);
+  animation: doodleFloatSlow 8.5s ease-in-out infinite;
+}
+
+/* ML and AI: brain (gear + chip reuse the homepage skills positions) */
+.doodle-brain {
+  top: 9%;
+  left: 5%;
+  width: clamp(44px, 7.2vw, 66px);
+  color: rgba(184, 134, 11, 0.36);
+  animation: doodleFloatSlow 8s ease-in-out infinite;
+}
+
+/* NLP: chat bubble (document reuses the homepage experience position) */
+.doodle-chat {
+  top: 10%;
+  right: 5%;
+  width: clamp(42px, 7vw, 62px);
+  color: rgba(92, 69, 38, 0.32);
+  animation: doodleFloatSlow2 8.5s ease-in-out infinite;
+}
+
+/* Full stack: browser, code (keyboard reuses the homepage projects position) */
+.doodle-browser {
+  top: 9%;
+  left: 4%;
+  width: clamp(46px, 7.6vw, 70px);
+  color: rgba(194, 87, 12, 0.3);
+  animation: doodleFloatSlow 9s ease-in-out infinite 0.2s;
+}
+
+.doodle-code {
+  bottom: 9%;
+  left: 5%;
+  width: clamp(38px, 6.4vw, 58px);
+  color: rgba(92, 69, 38, 0.32);
+  animation: doodleSway 6s ease-in-out infinite;
+}
+
+/* Hardware: server, robot (gear reuses the homepage skills position) */
+.doodle-server {
+  top: 9%;
+  left: 4%;
+  width: clamp(40px, 6.6vw, 60px);
+  color: rgba(92, 69, 38, 0.3);
+  animation: doodleFloatSlow2 9s ease-in-out infinite;
+}
+
+.doodle-robot {
+  bottom: 8%;
+  right: 5%;
+  width: clamp(42px, 7vw, 64px);
+  color: rgba(194, 87, 12, 0.32);
+  animation: doodleFloatSlow 8.5s ease-in-out infinite 0.3s;
+}
+
+/* ==========================================================================
+   Dark theme tech graphics
+   --------------------------------------------------------------------------
+   Dark-mode-only counterpart to the light-theme notebook doodles above.
+   Most of these are now LIVE — a small dependency-free canvas engine
+   (js/tech-graphics.js) draws drifting network graphs, layered neural
+   diagrams, and matrix-style code rain — plus a few pure CSS/SVG
+   set-pieces (a "writing code" terminal window, a growing bar chart, a
+   self-drawing line chart) for sections where a literal animation loop
+   isn't the right fit. Shown by default (dark is the root theme) and
+   hidden whenever light theme is active. Positioned behind content via
+   the isolation/z-index fix already applied to every section above, so
+   these can be large and prominent without ever touching legibility.
+   ========================================================================== */
+
+.section-doodles-dark {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.light-theme .section-doodles-dark {
+  display: none;
+}
+
+/* ---- Live canvas graphics (network / neural / matrix) ---- */
+.tech-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(360px, 55vh, 640px);
+  display: block;
+}
+
+.hero .tech-canvas,
+.projects-hero .tech-canvas {
+  height: 100%;
+}
+
+/* ---- Static accents kept from the previous round (still used where a
+   literal animation loop isn't needed: hardware circuit board, education
+   terminal window) ---- */
+.tech-doodle {
+  position: absolute;
+  height: auto;
+}
+
+.tech-doodle-circuit {
+  color: rgba(52, 211, 153, 0.3);
+  animation: doodlePulseSoft 4.5s ease-in-out infinite;
+}
+
+.tech-doodle-terminal {
+  color: rgba(52, 211, 153, 0.32);
+  animation: doodleBlink 2.6s steps(1, end) infinite;
+}
+
+@keyframes doodleBlink {
+  0%, 45% {
+    opacity: 0.8;
+  }
+
+  50%, 95% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+#hardware .tech-doodle-circuit {
+  top: 8%;
+  right: 4%;
+  width: clamp(120px, 15vw, 175px);
+}
+
+#education .tech-doodle-terminal {
+  bottom: 8%;
+  right: 4%;
+  width: clamp(85px, 11vw, 125px);
+}
+
+/* ---- "Writing code" terminal window (experience, full stack) ---- */
+.code-window {
+  position: absolute;
+  top: 8%;
+  right: 4%;
+  width: clamp(230px, 30vw, 340px);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 10px;
+  background: rgba(52, 211, 153, 0.05);
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.code-window-bar {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(52, 211, 153, 0.22);
+}
+
+.code-window-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.38);
+}
+
+.code-window-body {
+  padding: 14px 16px 18px;
+  font-size: 12.5px;
+  line-height: 2;
+  color: rgba(134, 239, 172, 0.55);
+}
+
+.code-line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid rgba(134, 239, 172, 0.6);
+  animation: codeType 7.2s steps(22, end) infinite;
+}
+
+.code-line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.code-line:nth-child(2) {
+  animation-delay: 1.8s;
+}
+
+.code-line:nth-child(3) {
+  animation-delay: 3.6s;
+}
+
+.code-line:nth-child(4) {
+  animation-delay: 5.4s;
+}
+
+@keyframes codeType {
+  0% {
+    width: 0;
+  }
+
+  22% {
+    width: var(--w, 18ch);
+  }
+
+  70% {
+    width: var(--w, 18ch);
+  }
+
+  88%, 100% {
+    width: 0;
+  }
+}
+
+/* ---- Growing bar chart (certificates: "charts growing") ---- */
+.chart-bars {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(6px, 1vw, 10px);
+  height: clamp(70px, 10vw, 110px);
+}
+
+.chart-bars span {
+  display: block;
+  width: clamp(10px, 1.6vw, 16px);
+  height: var(--h);
+  background: linear-gradient(to top, rgba(52, 211, 153, 0.5), rgba(134, 239, 172, 0.12));
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  border-radius: 3px 3px 0 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: barGrow 5.5s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes barGrow {
+  0%, 6% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  28%, 82% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+/* ---- Self-drawing line chart (research: pairs with the network canvas
+   to cover both "graphs and charts") ---- */
+.chart-line-doodle {
+  position: absolute;
+  bottom: 6%;
+  right: 4%;
+  width: clamp(170px, 20vw, 260px);
+  height: auto;
+  color: rgba(52, 211, 153, 0.36);
+  stroke-dasharray: 320;
+  animation: doodleDraw 8s ease-in-out infinite;
+}
+
+/* ---- Per-card dark accents (journey, beyond the code) — one small
+   custom icon per card, matched to that card's own content, instead of
+   one generic graphic for the whole section. ---- */
+.journey-doodle-dark,
+.activity-doodle-dark {
+  display: block;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: clamp(20px, 4vw, 26px);
+  height: clamp(20px, 4vw, 26px);
+  color: rgba(52, 211, 153, 0.42);
+  pointer-events: none;
+  z-index: -1;
+  animation: doodleFloatTiny 6s ease-in-out infinite;
+}
+
+body.light-theme .journey-doodle-dark,
+body.light-theme .activity-doodle-dark {
+  display: none;
+}
+
+.journey-doodle-dark svg,
+.activity-doodle-dark svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile: bring the corner-anchored set-pieces in from the edge and
+   trim them down so they sit in the clear gap between a heading and the
+   first card, same fix and same reasoning as the per-section canvases
+   below (verified via Playwright at 390px — see project memory). */
+@media (max-width: 640px) {
+  /* Mobile heroes stack into one tall column, so a canvas sized to
+     "100% of the hero" (fine on the short, wide desktop hero) ends up
+     several viewport-heights tall and its expanding center lands on
+     top of the CTA/contact links instead of behind the headline. Cap
+     it like every other section instead. */
+  .hero .tech-canvas {
+    height: clamp(280px, 42vh, 420px);
+  }
+
+  /* The archive hero is much shorter and denser (label/h1/description/
+     buttons packed into ~575px with no side gap), so even the capped
+     height above still lands on the headline. Push it down into the
+     button row and the empty padding beneath it instead. */
+  .projects-hero .tech-canvas {
+    top: 52%;
+    height: 48%;
+  }
+
+  /* The full 4-line code window doesn't fit any single mobile gap, so
+     it moves into the section's top padding (above the heading) and
+     drops to a compact 2-line preview there. */
+  .code-window {
+    top: 6px;
+    right: 4%;
+    width: min(70vw, 260px);
+  }
+
+  .code-window-body {
+    padding: 10px 12px 12px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .code-line:nth-child(n + 3) {
+    display: none;
+  }
+
+  .chart-bars {
+    height: 64px;
+  }
+
+  .chart-line-doodle {
+    width: 150px;
+  }
+}
+
+/* Education: a faint oversized "shadow" of a cap and gown, not a small
+   corner icon — meant to read as a watermark behind the education card. */
+.doodle-cap-shadow {
+  top: 4%;
+  right: 6%;
+  width: clamp(90px, 16vw, 150px);
+  color: rgba(194, 87, 12, 0.14);
+  animation: doodleFloatSlow2 11s ease-in-out infinite;
+}
+
+.doodle-gown-shadow {
+  bottom: -6%;
+  right: 2%;
+  width: clamp(140px, 24vw, 230px);
+  color: rgba(92, 69, 38, 0.09);
+  animation: doodleFloatSlow 14s ease-in-out infinite;
+}
+
+/* Journey: one small watermark icon per stage card, matched to what that
+   card's copy describes. Beyond the Code: one large watermark doodle per
+   activity card, filling most of the card as a background illustration
+   rather than a small corner icon. Both sit inside an already-positioned
+   card rather than a full section overlay. */
+.journey-doodle,
+.activity-doodle {
+  display: none;
+}
+
+body.light-theme .journey-doodle {
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: clamp(20px, 4vw, 26px);
+  height: clamp(20px, 4vw, 26px);
+  color: rgba(92, 69, 38, 0.32);
+  pointer-events: none;
+  z-index: -1;
+  animation: doodleFloatTiny 6s ease-in-out infinite;
+}
+
+body.light-theme .activity-doodle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -4%;
+  transform: translateY(-50%) rotate(-6deg);
+  width: clamp(120px, 17vw, 190px);
+  height: auto;
+  color: rgba(92, 69, 38, 0.12);
+  pointer-events: none;
+  z-index: -1;
+  animation: doodleFloatSlow 10s ease-in-out infinite;
+}
+
+body.light-theme .activity-card-wide .activity-doodle {
+  width: clamp(160px, 13vw, 250px);
+  right: 1%;
+}
+
+body.light-theme .journey-doodle svg,
+body.light-theme .activity-doodle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.journey-item,
+.activity-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@keyframes doodlePencil {
+  0%, 100% {
+    transform: rotate(-18deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-13deg) translateY(-10px);
+  }
+}
+
+@keyframes doodleClip {
+  0%, 100% {
+    transform: rotate(10deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(16deg) translateY(8px);
+  }
+}
+
+@keyframes doodleStain {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.04) rotate(2deg);
+  }
+}
+
+@keyframes doodleStar {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes doodleFloatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+}
+
+@keyframes doodleFloatSlow2 {
+  0%, 100% {
+    transform: translateY(0) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(-2deg);
+  }
+}
+
+@keyframes doodleFloatTiny {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes doodleSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes doodlePulseSoft {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes doodleSway {
+  0%, 100% {
+    transform: rotate(-9deg);
+  }
+
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+/* Draws the hero scribble in on a loop using stroke-dashoffset, holds it
+   fully drawn for a beat, then fades out before the next pass — a cheap,
+   dependency-free "self-drawing" effect using only CSS. */
+@keyframes doodleDraw {
+  0% {
+    stroke-dashoffset: 220;
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.9;
+  }
+
+  55%, 78% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+
+  100% {
+    stroke-dashoffset: -220;
+    opacity: 0;
+  }
+}
+
+/* A punchier scale + rotate pulse for the projects "explosion" doodle. */
+@keyframes doodleBurst {
+  0%, 100% {
+    transform: scale(0.92) rotate(-4deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.08) rotate(5deg);
+    opacity: 1;
+  }
 }
 
 * {
@@ -679,9 +1651,32 @@ a:focus-visible {
 }
 
 .hero-stat {
+  position: relative;
+  display: block;
   padding: 16px 18px;
+  border: 1px solid transparent;
   border-radius: 15px;
   background: rgba(148, 163, 184, 0.055);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-stat:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  background: var(--surface-light);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+.hero-stat:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.45);
+  outline-offset: 4px;
 }
 
 .hero-stat strong,
@@ -700,6 +1695,24 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
+}
+
+.hero-stat small {
+  display: block;
+  margin-top: 10px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  opacity: 0.72;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-stat:hover small,
+.hero-stat:focus-visible small {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 @keyframes roleCycle {
@@ -816,8 +1829,29 @@ a:focus-visible {
 }
 
 .highlight-card {
+  display: block;
   padding: 24px;
   border-radius: var(--radius-medium);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  background: var(--surface-light);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+.highlight-card:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.45);
+  outline-offset: 4px;
 }
 
 .highlight-card h3 {
@@ -829,6 +1863,24 @@ a:focus-visible {
   margin: 0;
   color: var(--muted);
   font-size: 0.91rem;
+}
+
+.highlight-card small {
+  display: block;
+  margin-top: 14px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  opacity: 0.72;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.highlight-card:hover small,
+.highlight-card:focus-visible small {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 /* Experience */
@@ -1912,6 +2964,13 @@ a:focus-visible {
     width: min(100%, 330px);
   }
 
+  /* The spiral lives in the desktop gap between the intro copy and the
+     portrait; once the hero stacks to one column that gap disappears, so
+     hide it rather than risk it landing on stacked text. */
+  .doodle-spiral {
+    display: none;
+  }
+
   .skills-grid,
   .certificates-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1980,11 +3039,6 @@ a:focus-visible {
   .journey-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .footer-layout {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 @media (max-width: 620px) {
@@ -2006,6 +3060,32 @@ a:focus-visible {
 
   .hero h1 {
     font-size: clamp(2.85rem, 16vw, 4.2rem);
+  }
+
+  /* On narrow single-column layouts the section heading can wrap onto
+     three lines, so a few corner doodles that sit safely beside a
+     two-line desktop heading would otherwise land on top of the extra
+     line. Nudge just those into the section's top/bottom padding strip,
+     which stays empty at every width. */
+  .doodle-clock {
+    top: 2%;
+    left: 4%;
+  }
+
+  .doodle-microscope {
+    top: 2%;
+    right: 4%;
+  }
+
+  .doodle-trophy {
+    top: 2%;
+    right: 4%;
+  }
+
+  .doodle-circle-mark {
+    top: 5.5%;
+    left: 2%;
+    width: 118px;
   }
 
   .about-highlights,
@@ -2182,6 +3262,22 @@ a:focus-visible {
 
   .role-rotator > span:first-child {
     display: block;
+  }
+}
+
+/* The global "animation: none !important" rule above freezes the growing
+   bar chart and the typing code lines at their 0%-keyframe resting state
+   (scaleY(0)/width:0) — invisible. Give reduced-motion visitors a
+   sensible static picture instead: fully grown bars, fully typed code. */
+@media (prefers-reduced-motion: reduce) {
+  .chart-bars span {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .code-line {
+    width: var(--w, 18ch);
+    border-right-color: transparent;
   }
 }
 /* Final mobile hero portrait correction */

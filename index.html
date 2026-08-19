@@ -8,6 +8,8 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <title>Mashrur Shakhawat Sayan | Machine Learning Engineer</title>
+
   <meta
     name="description"
     content="Portfolio of Mashrur Shakhawat Sayan, a machine learning engineer and software developer focused on computer vision, MLOps, predictive analytics, and deployable AI systems."
@@ -19,6 +21,23 @@
   >
 
   <meta name="author" content="Mashrur Shakhawat Sayan">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#07111f">
+  <meta name="color-scheme" content="dark light">
+
+  <!--
+    NOTE: this canonical/OG/sitemap URL is inferred from the GitHub username
+    and repo name (see new/DEPLOYMENT-NOTES.txt). Confirm it matches your
+    actual deployed URL and update here (plus robots.txt and sitemap.xml)
+    if it doesn't.
+  -->
+  <link rel="canonical" href="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" sizes="180x180">
 
   <meta
     property="og:title"
@@ -31,15 +50,306 @@
   >
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mashrur Shakhawat Sayan Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/">
+  <meta property="og:image" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/assets/images/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mashrur Shakhawat Sayan — Machine Learning Engineer portfolio">
 
-  <title>Mashrur Shakhawat Sayan | Machine Learning Engineer</title>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mashrur Shakhawat Sayan | Machine Learning Engineer">
+  <meta name="twitter:description" content="Machine learning, computer vision, MLOps, cloud research, and software development projects.">
+  <meta name="twitter:image" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/assets/images/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mashrur Shakhawat Sayan",
+    "url": "https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/",
+    "email": "mailto:shakhawatsayan123@gmail.com",
+    "jobTitle": "Machine Learning Engineer",
+    "sameAs": [
+      "https://github.com/Mashrur-Shakhawat-Sayan",
+      "https://www.linkedin.com/in/mashrur-shakhawat-0b628127a/",
+      "https://orcid.org/0009-0003-2556-075X"
+    ],
+    "knowsAbout": [
+      "Machine Learning",
+      "Computer Vision",
+      "MLOps",
+      "PyTorch",
+      "MLflow",
+      "Docker",
+      "Streamlit",
+      "Software Development"
+    ]
+  }
+  </script>
 
   <script>document.documentElement.classList.add("js");</script>
 
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=19">
 </head>
 
 <body>
+
+  <!--
+    Shared icon sprite for the light-theme doodles used throughout the
+    page (hero, experience, research, projects, skills, certificates,
+    education, journey, activities). Defined once and reused everywhere
+    via <use>, so adding ~18 icons costs a few KB of inline markup
+    instead of 18 separate image requests — stays free/fast on GitHub
+    Pages. Hidden from layout and from assistive tech (real content
+    elsewhere uses aria-hidden on the doodle wrappers).
+  -->
+  <svg width="0" height="0" style="position:absolute; overflow:hidden;" aria-hidden="true">
+    <defs>
+      <symbol id="doodle-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="8" width="18" height="11" rx="1.5"></rect>
+        <rect x="9" y="4" width="6" height="4" rx="1"></rect>
+        <line x1="3" y1="13" x2="21" y2="13"></line>
+      </symbol>
+      <symbol id="doodle-necktie" viewBox="0 0 24 24">
+        <polygon points="9,3 15,3 12,7"></polygon>
+        <polygon points="9.5,7 14.5,7 17,20 12,23 7,20"></polygon>
+      </symbol>
+      <symbol id="doodle-microscope" viewBox="0 0 24 24">
+        <line x1="7" y1="21" x2="17" y2="21"></line>
+        <line x1="12" y1="21" x2="12" y2="17"></line>
+        <rect x="6" y="14.6" width="12" height="2.4" rx="1"></rect>
+        <circle cx="12" cy="8" r="2.3"></circle>
+        <path d="M9.3 11.7c-.8-2.6.3-4.8 2.2-6.2"></path>
+        <line x1="14" y1="3" x2="18" y2="7"></line>
+      </symbol>
+      <symbol id="doodle-flask" viewBox="0 0 24 24">
+        <path d="M9 2h6"></path>
+        <path d="M10 2v6.2L4.6 18.6A2 2 0 0 0 6.4 21.5h11.2a2 2 0 0 0 1.8-2.9L14 8.2V2"></path>
+        <line x1="7.6" y1="14" x2="16.4" y2="14"></line>
+      </symbol>
+      <symbol id="doodle-spark" viewBox="0 0 24 24">
+        <line x1="12" y1="2" x2="12" y2="8"></line>
+        <line x1="12" y1="16" x2="12" y2="22"></line>
+        <line x1="2" y1="12" x2="8" y2="12"></line>
+        <line x1="16" y1="12" x2="22" y2="12"></line>
+        <line x1="5" y1="5" x2="9" y2="9"></line>
+        <line x1="15" y1="15" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="15" y2="9"></line>
+        <line x1="9" y1="15" x2="5" y2="19"></line>
+      </symbol>
+      <symbol id="doodle-wrench" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z"></path>
+      </symbol>
+      <symbol id="doodle-keyboard" viewBox="0 0 24 24">
+        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+        <circle cx="6" cy="10" r="0.6"></circle>
+        <circle cx="10" cy="10" r="0.6"></circle>
+        <circle cx="14" cy="10" r="0.6"></circle>
+        <circle cx="18" cy="10" r="0.6"></circle>
+        <rect x="6" y="13.4" width="12" height="2" rx="1"></rect>
+      </symbol>
+      <symbol id="doodle-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3.2"></circle>
+        <path d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.1 4.9l-2.1 2.1M7 15l-2.1 2.1M19.1 19.1l-2.1-2.1M7 9 4.9 6.9"></path>
+      </symbol>
+      <symbol id="doodle-chip" viewBox="0 0 24 24">
+        <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+        <line x1="9" y1="3" x2="9" y2="7"></line>
+        <line x1="15" y1="3" x2="15" y2="7"></line>
+        <line x1="9" y1="17" x2="9" y2="21"></line>
+        <line x1="15" y1="17" x2="15" y2="21"></line>
+        <line x1="3" y1="9" x2="7" y2="9"></line>
+        <line x1="3" y1="15" x2="7" y2="15"></line>
+        <line x1="17" y1="9" x2="21" y2="9"></line>
+        <line x1="17" y1="15" x2="21" y2="15"></line>
+      </symbol>
+      <symbol id="doodle-trophy" viewBox="0 0 24 24">
+        <path d="M7 4h10v4a5 5 0 0 1-10 0z"></path>
+        <path d="M7 5H4a3 3 0 0 0 3 5"></path>
+        <path d="M17 5h3a3 3 0 0 1-3 5"></path>
+        <line x1="12" y1="13" x2="12" y2="17"></line>
+        <path d="M8 20h8"></path>
+        <path d="M9 20l1-3h4l1 3"></path>
+      </symbol>
+      <symbol id="doodle-medal" viewBox="0 0 24 24">
+        <path d="M8 2l2 7M16 2l-2 7"></path>
+        <circle cx="12" cy="15" r="6"></circle>
+        <path d="M12 11.5l1 3 3 .3-2.3 2 .7 3-2.4-1.7-2.4 1.7.7-3-2.3-2 3-.3z"></path>
+      </symbol>
+      <symbol id="doodle-graduation-cap" viewBox="0 0 24 24">
+        <polygon points="12,4 22,9 12,14 2,9"></polygon>
+        <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path>
+        <line x1="22" y1="9" x2="22" y2="15"></line>
+      </symbol>
+      <symbol id="doodle-gown" viewBox="0 0 24 24">
+        <path d="M9 3c0 2-1 3-3 3.5C4 7 3 9 3 12v9h18v-9c0-3-1-5-3-5.5C16 6 15 5 15 3"></path>
+        <path d="M9 3c1 1.5 2 2 3 2s2-.5 3-2"></path>
+      </symbol>
+      <symbol id="doodle-backpack" viewBox="0 0 24 24">
+        <rect x="5" y="8" width="14" height="13" rx="3"></rect>
+        <path d="M8 8V6a4 4 0 0 1 8 0v2"></path>
+        <rect x="9" y="12" width="6" height="4" rx="1"></rect>
+        <line x1="8" y1="8" x2="8" y2="10"></line>
+        <line x1="16" y1="8" x2="16" y2="10"></line>
+      </symbol>
+      <symbol id="doodle-laptop" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="11" rx="1"></rect>
+        <line x1="2" y1="19" x2="22" y2="19"></line>
+        <line x1="7" y1="19" x2="17" y2="19"></line>
+      </symbol>
+      <symbol id="doodle-chess" viewBox="0 0 24 24">
+        <line x1="12" y1="2" x2="12" y2="6"></line>
+        <line x1="10" y1="4" x2="14" y2="4"></line>
+        <path d="M8 8h8l-1.2 6H9.2z"></path>
+        <path d="M6.5 20c0-2.2 2-3 2-5.5h7c0 2.5 2 3.3 2 5.5z"></path>
+        <line x1="5" y1="20.6" x2="19" y2="20.6"></line>
+      </symbol>
+      <symbol id="doodle-server" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="6" rx="1.5"></rect>
+        <rect x="3" y="14" width="18" height="6" rx="1.5"></rect>
+        <circle cx="7" cy="7" r="0.6"></circle>
+        <circle cx="7" cy="17" r="0.6"></circle>
+        <line x1="11" y1="7" x2="17" y2="7"></line>
+        <line x1="11" y1="17" x2="17" y2="17"></line>
+      </symbol>
+      <symbol id="doodle-code" viewBox="0 0 24 24">
+        <polyline points="8,7 3,12 8,17"></polyline>
+        <polyline points="16,7 21,12 16,17"></polyline>
+        <line x1="14" y1="4" x2="10" y2="20"></line>
+      </symbol>
+      <symbol id="doodle-compass" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 5v3M12 16v3M5 12h3M16 12h3"></path>
+        <path d="M8 8l1.5 1.5M14.5 14.5 16 16M16 8l-1.5 1.5M9.5 14.5 8 16"></path>
+        <circle cx="12" cy="12" r="2"></circle>
+      </symbol>
+      <symbol id="doodle-scribble" viewBox="0 0 100 40">
+        <path d="M2 30 Q15 5 28 25 T54 20 T80 28 T98 12"></path>
+      </symbol>
+      <symbol id="doodle-circle-mark" viewBox="0 0 200 70">
+        <path d="M22 42 C6 22 38 5 100 5 C166 5 197 20 189 40 C181 61 122 67 86 65 C46 63 9 54 24 34"></path>
+      </symbol>
+      <symbol id="doodle-spiral" viewBox="0 0 100 100">
+        <polyline points="52.5,51.7 52.5,52.6 52.3,53.7 51.7,54.7 50.7,55.6 49.5,56.2 48.1,56.6 46.4,56.6 44.7,56.2 43,55.4 41.4,54.1 40.1,52.4 39.2,50.3 38.7,47.9 38.8,45.4 39.5,42.8 40.8,40.3 42.6,38 45.1,36.2 48,34.8 51.2,34 54.7,34 58.2,34.8 61.6,36.3 64.7,38.6 67.4,41.7 69.3,45.3 70.5,49.4 70.9,53.8 70.2,58.3 68.6,62.7 66,66.8 62.5,70.3 58.2,73 53.3,74.9 48,75.7 42.6,75.3 37.1,73.8 32.1,71.1 27.5,67.3 23.9,62.5 21.2,57 19.7,50.9 19.6,44.4 20.8,38 23.4,31.8 27.3,26.2 32.4,21.4 38.5,17.8 45.4,15.5 52.7,14.6 60.2,15.3 67.5,17.6 74.3,21.5 80.2,26.7 84.9,33.2 88.3,40.7 90,48.9 90,57.3 88.2,65.7"></polyline>
+      </symbol>
+      <symbol id="doodle-lightbulb" viewBox="0 0 24 24">
+        <path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1.1 2.1h4.8c.1-.9.5-1.6 1.1-2.1A6 6 0 0 0 12 3z"></path>
+        <line x1="9" y1="18" x2="15" y2="18"></line>
+        <line x1="10" y1="21" x2="14" y2="21"></line>
+      </symbol>
+      <symbol id="doodle-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7v5l3.5 2"></path>
+      </symbol>
+      <symbol id="doodle-document" viewBox="0 0 24 24">
+        <path d="M6 2h9l5 5v15H6z"></path>
+        <path d="M15 2v5h5"></path>
+        <line x1="9" y1="13" x2="17" y2="13"></line>
+        <line x1="9" y1="17" x2="15" y2="17"></line>
+      </symbol>
+      <symbol id="doodle-explosion" viewBox="0 0 24 24">
+        <path d="M12 1l1.8 5.2L19 3.5l-1.8 5.6L23 11l-5.6 1.6L19 18l-5.2-2L12 23l-1.8-5.2L5 20.5l1.8-5.6L1 13l5.6-1.6L5 6l5.2 2z"></path>
+      </symbol>
+      <symbol id="doodle-camera" viewBox="0 0 24 24">
+        <path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path>
+        <circle cx="12" cy="14" r="4"></circle>
+        <circle cx="18" cy="10.5" r="0.6"></circle>
+      </symbol>
+      <symbol id="doodle-chart" viewBox="0 0 24 24">
+        <line x1="3" y1="21" x2="3" y2="3"></line>
+        <line x1="3" y1="21" x2="21" y2="21"></line>
+        <polyline points="6,17 10,11 14,14 20,6"></polyline>
+      </symbol>
+      <symbol id="doodle-confetti" viewBox="0 0 24 24">
+        <rect x="1.5" y="3" width="4" height="4" rx="1" transform="rotate(18 3.5 5)"></rect>
+        <circle cx="18" cy="4" r="2"></circle>
+        <rect x="16" y="14" width="4" height="4" rx="1" transform="rotate(-15 18 16)"></rect>
+        <circle cx="4" cy="17" r="2"></circle>
+        <path d="M10 2l1.4 3.4L15 7l-3.6 1.6L10 12l-1.4-3.4L5 7l3.6-1.6z"></path>
+      </symbol>
+      <symbol id="doodle-robot" viewBox="0 0 24 24">
+        <rect x="5" y="9" width="14" height="10" rx="2"></rect>
+        <circle cx="9.5" cy="14" r="1.2"></circle>
+        <circle cx="14.5" cy="14" r="1.2"></circle>
+        <line x1="9" y1="19" x2="9" y2="21"></line>
+        <line x1="15" y1="19" x2="15" y2="21"></line>
+        <line x1="12" y1="9" x2="12" y2="5"></line>
+        <circle cx="12" cy="3.5" r="1.5"></circle>
+        <line x1="2" y1="13" x2="5" y2="13"></line>
+        <line x1="19" y1="13" x2="22" y2="13"></line>
+      </symbol>
+      <symbol id="doodle-xray" viewBox="0 0 24 24">
+        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+        <path d="M9 6c1 3-1 4 0 7s-1 4 0 7"></path>
+        <path d="M15 6c-1 3 1 4 0 7s1 4 0 7"></path>
+        <line x1="7" y1="4" x2="17" y2="4"></line>
+      </symbol>
+      <symbol id="doodle-tent" viewBox="0 0 24 24">
+        <path d="M12 3l9 18H3z"></path>
+        <path d="M12 3v18"></path>
+        <path d="M8 21l4-8 4 8"></path>
+        <line x1="1" y1="21" x2="23" y2="21"></line>
+      </symbol>
+      <symbol id="doodle-ribbon" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="6"></circle>
+        <circle cx="12" cy="8" r="2.4"></circle>
+        <path d="M8.5 13.5L6 22l6-4 6 4-2.5-8.5"></path>
+      </symbol>
+      <symbol id="doodle-circuit" viewBox="0 0 100 60">
+        <path d="M5 10H35V30H65V10H95M35 30V50H65"></path>
+        <circle cx="5" cy="10" r="3"></circle>
+        <circle cx="65" cy="10" r="3"></circle>
+        <circle cx="95" cy="10" r="3"></circle>
+        <circle cx="35" cy="50" r="3"></circle>
+        <circle cx="65" cy="50" r="3"></circle>
+      </symbol>
+      <symbol id="doodle-network" viewBox="0 0 100 80">
+        <line x1="15" y1="15" x2="50" y2="10"></line>
+        <line x1="15" y1="15" x2="20" y2="55"></line>
+        <line x1="50" y1="10" x2="85" y2="25"></line>
+        <line x1="50" y1="10" x2="55" y2="50"></line>
+        <line x1="20" y1="55" x2="55" y2="50"></line>
+        <line x1="55" y1="50" x2="85" y2="60"></line>
+        <line x1="85" y1="25" x2="55" y2="50"></line>
+        <circle cx="15" cy="15" r="4"></circle>
+        <circle cx="50" cy="10" r="4"></circle>
+        <circle cx="85" cy="25" r="4"></circle>
+        <circle cx="20" cy="55" r="4"></circle>
+        <circle cx="55" cy="50" r="4"></circle>
+        <circle cx="85" cy="60" r="4"></circle>
+      </symbol>
+      <symbol id="doodle-terminal" viewBox="0 0 100 70">
+        <rect x="2" y="2" width="96" height="66" rx="5"></rect>
+        <line x1="2" y1="17" x2="98" y2="17"></line>
+        <circle cx="11" cy="9.5" r="2"></circle>
+        <circle cx="19" cy="9.5" r="2"></circle>
+        <circle cx="27" cy="9.5" r="2"></circle>
+        <path d="M12 29L23 38L12 47"></path>
+        <line x1="29" y1="47" x2="55" y2="47"></line>
+      </symbol>
+      <symbol id="doodle-matrix" viewBox="0 0 60 100">
+        <line x1="6" y1="0" x2="6" y2="38" stroke-dasharray="3 5"></line>
+        <line x1="18" y1="14" x2="18" y2="70" stroke-dasharray="3 5"></line>
+        <line x1="30" y1="0" x2="30" y2="52" stroke-dasharray="3 5"></line>
+        <line x1="42" y1="24" x2="42" y2="88" stroke-dasharray="3 5"></line>
+        <line x1="54" y1="6" x2="54" y2="44" stroke-dasharray="3 5"></line>
+      </symbol>
+      <symbol id="doodle-chart-line" viewBox="0 0 220 120">
+        <line x1="4" y1="4" x2="4" y2="112"></line>
+        <line x1="4" y1="112" x2="216" y2="112"></line>
+        <polyline points="10,98 48,76 86,86 124,44 162,56 200,18"></polyline>
+        <circle cx="10" cy="98" r="3"></circle>
+        <circle cx="48" cy="76" r="3"></circle>
+        <circle cx="86" cy="86" r="3"></circle>
+        <circle cx="124" cy="44" r="3"></circle>
+        <circle cx="162" cy="56" r="3"></circle>
+        <circle cx="200" cy="18" r="3"></circle>
+      </symbol>
+    </defs>
+  </svg>
 
   <a class="skip-link" href="#main-content">
     Skip to main content
@@ -93,6 +403,51 @@
     <section class="hero section" id="home">
       <div class="hero-grid" aria-hidden="true"></div>
 
+      <!--
+        Light-theme-only decorative doodles (pencil, paperclip, coffee
+        ring, star). Pure inline SVG, no external assets or scripts, so
+        this costs nothing extra on GitHub Pages. Hidden in dark theme
+        and on small screens via CSS (see .notebook-doodles in style.css).
+      -->
+      <div class="notebook-doodles" aria-hidden="true">
+        <svg class="doodle doodle-pencil" viewBox="0 0 64 16" fill="currentColor">
+          <rect x="0" y="4" width="44" height="8" rx="2"></rect>
+          <polygon points="44,1 61,8 44,15"></polygon>
+          <rect x="59" y="6.5" width="4" height="3"></rect>
+        </svg>
+
+        <svg class="doodle doodle-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5 12 20.5a5.5 5.5 0 0 1-7.8-7.8l9-9a3.7 3.7 0 0 1 5.2 5.2l-8.7 8.7a1.9 1.9 0 0 1-2.7-2.7l8-8"></path>
+        </svg>
+
+        <svg class="doodle doodle-stain" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="37" stroke-width="3"></circle>
+          <circle cx="54" cy="46" r="28" stroke-width="2"></circle>
+        </svg>
+
+        <svg class="doodle doodle-star" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2 14 10 22 12 14 14 12 22 10 14 2 12 10 10Z"></path>
+        </svg>
+
+        <svg class="doodle doodle-scribble" viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-scribble"></use></svg>
+
+        <svg class="doodle doodle-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-lightbulb"></use></svg>
+
+        <svg class="doodle doodle-circle-mark" viewBox="0 0 200 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-circle-mark"></use></svg>
+
+        <svg class="doodle doodle-spiral" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-spiral"></use></svg>
+      </div>
+
+      <!--
+        Dark-theme-only counterpart: a live pathfinding search sketching a
+        route across a small grid map from a start node to an end node
+        (js/tech-graphics.js), hidden whenever light theme is active (see
+        .section-doodles-dark in style.css).
+      -->
+      <div class="section-doodles-dark" aria-hidden="true">
+        <canvas class="tech-canvas" data-mode="pathfind" data-density="1" data-speed="1"></canvas>
+      </div>
+
       <div class="container hero-shell">
         <div class="hero-layout">
 
@@ -128,10 +483,11 @@
             </div>
 
             <p class="hero-description">
-              I build explainable computer vision systems, predictive
-              analytics applications, and deployable machine learning
-              solutions using Python, PyTorch, MLflow, Docker, and
-              Streamlit.
+              I design and deploy explainable computer vision systems,
+              predictive analytics tools, and end to end machine learning
+              pipelines &#8212; turning research grade models into
+              production ready systems with Python, PyTorch, MLflow,
+              Docker, and Streamlit.
             </p>
 
             <div class="hero-tags" aria-label="Core technologies">
@@ -248,25 +604,45 @@
 
         <div class="hero-stats" aria-label="Portfolio highlights">
 
-          <article class="hero-stat">
+          <a
+            class="hero-stat"
+            href="projects.html"
+            aria-label="View all completed projects"
+          >
             <strong>20+</strong>
             <span>Projects completed</span>
-          </article>
+            <small>View projects →</small>
+          </a>
 
-          <article class="hero-stat">
+          <a
+            class="hero-stat"
+            href="projects.html#research"
+            aria-label="View research projects"
+          >
             <strong>4</strong>
             <span>Research projects</span>
-          </article>
+            <small>View research →</small>
+          </a>
 
-          <article class="hero-stat">
+          <a
+            class="hero-stat"
+            href="#experience"
+            aria-label="View internship experience"
+          >
             <strong>2</strong>
             <span>Internship experiences</span>
-          </article>
+            <small>View experience →</small>
+          </a>
 
-          <article class="hero-stat">
+          <a
+            class="hero-stat"
+            href="#certificates"
+            aria-label="View certificates and recognition"
+          >
             <strong>4</strong>
             <span>Certificates and recognition</span>
-          </article>
+            <small>View certificates →</small>
+          </a>
 
         </div>
 
@@ -306,37 +682,41 @@
 
           <div class="about-highlights">
 
-            <article class="highlight-card">
+            <a class="highlight-card" href="projects.html#ml-ai">
               <h3>Computer Vision</h3>
               <p>
                 Classification, landmark detection, image segmentation,
                 Grad CAM, and medical imaging.
               </p>
-            </article>
+              <small>View ML and AI projects →</small>
+            </a>
 
-            <article class="highlight-card">
+            <a class="highlight-card" href="projects.html#ml-ai">
               <h3>MLOps</h3>
               <p>
                 Experiment tracking, reproducible pipelines,
                 containerization, model serving, and deployment.
               </p>
-            </article>
+              <small>View ML and AI projects →</small>
+            </a>
 
-            <article class="highlight-card">
+            <a class="highlight-card" href="projects.html#fullstack">
               <h3>Software Development</h3>
               <p>
                 Python applications, Flutter development, web systems,
                 databases, testing, and version control.
               </p>
-            </article>
+              <small>View software projects →</small>
+            </a>
 
-            <article class="highlight-card">
+            <a class="highlight-card" href="projects.html#research">
               <h3>Research</h3>
               <p>
                 Federated learning, storage optimization, environmental
                 analytics, and explainable machine learning.
               </p>
-            </article>
+              <small>View research projects →</small>
+            </a>
 
           </div>
 
@@ -347,6 +727,25 @@
 
     <!-- Experience -->
     <section class="section section-muted" id="experience">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-briefcase"></use></svg>
+        <svg class="doodle doodle-necktie" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-necktie"></use></svg>
+        <svg class="doodle doodle-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-clock"></use></svg>
+        <svg class="doodle doodle-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-document"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <div class="code-window" aria-hidden="true">
+          <div class="code-window-bar"><span></span><span></span><span></span></div>
+          <div class="code-window-body">
+            <span class="code-line" style="--w: 17ch;">def train(model):</span>
+            <span class="code-line" style="--w: 21ch;">&nbsp;&nbsp;for epoch in range(50):</span>
+            <span class="code-line" style="--w: 14ch;">&nbsp;&nbsp;&nbsp;&nbsp;fit(batch)</span>
+            <span class="code-line" style="--w: 16ch;">deploy(pipeline)</span>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
 
         <div class="section-heading">
@@ -463,6 +862,17 @@
 
     <!-- Featured Projects -->
     <section class="section" id="featured-projects">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-wrench" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-wrench"></use></svg>
+        <svg class="doodle doodle-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-keyboard"></use></svg>
+        <svg class="doodle doodle-spark doodle-spark-projects" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#doodle-spark"></use></svg>
+        <svg class="doodle doodle-explosion" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-explosion"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <canvas class="tech-canvas" data-mode="network" data-density="2.1" data-speed="0.85"></canvas>
+      </div>
+
       <div class="container">
 
         <div class="section-heading section-heading-row">
@@ -808,6 +1218,19 @@
 
     <!-- Featured Research -->
     <section class="section section-muted research-section" id="research">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-microscope"></use></svg>
+        <svg class="doodle doodle-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-flask"></use></svg>
+        <svg class="doodle doodle-spark doodle-spark-research" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#doodle-spark"></use></svg>
+        <svg class="doodle doodle-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-camera"></use></svg>
+        <svg class="doodle doodle-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chart"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <canvas class="tech-canvas" data-mode="network" data-density="1.9" data-speed="0.8"></canvas>
+        <svg class="chart-line-doodle" viewBox="0 0 220 120" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chart-line"></use></svg>
+      </div>
+
       <div class="container">
 
         <div class="section-heading section-heading-row">
@@ -946,6 +1369,15 @@
 
     <!-- Skills -->
     <section class="section section-muted" id="skills">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-gear"></use></svg>
+        <svg class="doodle doodle-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chip"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <canvas class="tech-canvas" data-mode="matrix" data-density="1.6" data-speed="1.5"></canvas>
+      </div>
+
       <div class="container">
 
         <div class="section-heading">
@@ -1034,6 +1466,23 @@
 
     <!-- Certificates and Recognition -->
     <section class="section" id="certificates">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-trophy"></use></svg>
+        <svg class="doodle doodle-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-medal"></use></svg>
+        <svg class="doodle doodle-confetti doodle-confetti-a" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-confetti"></use></svg>
+        <svg class="doodle doodle-confetti doodle-confetti-b" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-confetti"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <div class="chart-bars" aria-hidden="true">
+          <span style="--h: 42%; --d: 0s;"></span>
+          <span style="--h: 68%; --d: 0.2s;"></span>
+          <span style="--h: 52%; --d: 0.4s;"></span>
+          <span style="--h: 88%; --d: 0.6s;"></span>
+          <span style="--h: 60%; --d: 0.8s;"></span>
+        </div>
+      </div>
+
       <div class="container">
 
         <div class="section-heading">
@@ -1128,7 +1577,7 @@
             <button
               class="certificate-image-button"
               type="button"
-              data-certificate="assets/certificates/html-development.jpg"
+              data-certificate="assets/certificates/html.jpg"
               aria-label="View HTML development certificate"
             >
               <img
@@ -1155,6 +1604,15 @@
 
     <!-- Education -->
     <section class="section section-muted" id="education">
+      <div class="section-doodles" aria-hidden="true">
+        <svg class="doodle doodle-cap-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-graduation-cap"></use></svg>
+        <svg class="doodle doodle-gown-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-gown"></use></svg>
+      </div>
+
+      <div class="section-doodles-dark" aria-hidden="true">
+        <svg class="tech-doodle tech-doodle-terminal" viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-terminal"></use></svg>
+      </div>
+
       <div class="container">
 
         <div class="section-heading">
@@ -1216,6 +1674,12 @@
         <div class="journey-grid">
 
           <article class="journey-item">
+            <span class="journey-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-backpack"></use></svg>
+            </span>
+            <span class="journey-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-code"></use></svg>
+            </span>
             <p class="journey-year">2021</p>
             <h3>Started Computer Science</h3>
             <p>
@@ -1225,6 +1689,12 @@
           </article>
 
           <article class="journey-item">
+            <span class="journey-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-robot"></use></svg>
+            </span>
+            <span class="journey-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-robot"></use></svg>
+            </span>
             <p class="journey-year">2022 to 2023</p>
             <h3>Built Web and Robotics Projects</h3>
             <p>
@@ -1234,6 +1704,12 @@
           </article>
 
           <article class="journey-item">
+            <span class="journey-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chart"></use></svg>
+            </span>
+            <span class="journey-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#doodle-network"></use></svg>
+            </span>
             <p class="journey-year">2024 to 2025</p>
             <h3>Focused on Machine Learning</h3>
             <p>
@@ -1243,6 +1719,12 @@
           </article>
 
           <article class="journey-item">
+            <span class="journey-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-briefcase"></use></svg>
+            </span>
+            <span class="journey-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-circuit"></use></svg>
+            </span>
             <p class="journey-year">2025 to 2026</p>
             <h3>Software Engineering and MLOps</h3>
             <p>
@@ -1252,6 +1734,12 @@
           </article>
 
           <article class="journey-item">
+            <span class="journey-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-xray"></use></svg>
+            </span>
+            <span class="journey-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-xray"></use></svg>
+            </span>
             <p class="journey-year">2026</p>
             <h3>Explainable Medical AI</h3>
             <p>
@@ -1287,6 +1775,12 @@
         <div class="activities-grid">
 
           <article class="activity-card">
+            <span class="activity-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chess"></use></svg>
+            </span>
+            <span class="activity-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chess"></use></svg>
+            </span>
             <div class="activity-number" aria-hidden="true">01</div>
 
             <div class="activity-content">
@@ -1312,6 +1806,12 @@
           </article>
 
           <article class="activity-card">
+            <span class="activity-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-server"></use></svg>
+            </span>
+            <span class="activity-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-terminal"></use></svg>
+            </span>
             <div class="activity-number" aria-hidden="true">02</div>
 
             <div class="activity-content">
@@ -1337,6 +1837,12 @@
           </article>
 
           <article class="activity-card">
+            <span class="activity-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-code"></use></svg>
+            </span>
+            <span class="activity-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 60 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#doodle-matrix"></use></svg>
+            </span>
             <div class="activity-number" aria-hidden="true">03</div>
 
             <div class="activity-content">
@@ -1362,6 +1868,12 @@
           </article>
 
           <article class="activity-card">
+            <span class="activity-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-tent"></use></svg>
+            </span>
+            <span class="activity-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-tent"></use></svg>
+            </span>
             <div class="activity-number" aria-hidden="true">04</div>
 
             <div class="activity-content">
@@ -1387,6 +1899,12 @@
           </article>
 
           <article class="activity-card activity-card-wide">
+            <span class="activity-doodle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-ribbon"></use></svg>
+            </span>
+            <span class="activity-doodle-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-ribbon"></use></svg>
+            </span>
             <div class="activity-number" aria-hidden="true">05</div>
 
             <div class="activity-content">
@@ -1463,7 +1981,7 @@
             class="contact-link"
           >
             <span>LinkedIn</span>
-            <strong>Mashrur Shakhawat(LinkedIn)</strong>
+            <strong>Mashrur Shakhawat Sayan</strong>
           </a>
 
           <a
@@ -1622,6 +2140,7 @@
   </button>
 
   <script src="js/script.js"></script>
+  <script src="js/tech-graphics.js"></script>
 
 </body>
 </html>

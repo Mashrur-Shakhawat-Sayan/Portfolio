@@ -41,6 +41,11 @@
       body.classList.contains("light-theme") ? "light" : "dark"
     );
     updateThemeButton();
+    document.dispatchEvent(
+      new CustomEvent("themechange", {
+        detail: { light: body.classList.contains("light-theme") }
+      })
+    );
   });
 
   const closeNavigation = () => {

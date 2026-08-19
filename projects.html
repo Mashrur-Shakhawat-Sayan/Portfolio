@@ -5,19 +5,217 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>All Projects | Mashrur Shakhawat Sayan</title>
+
   <meta
     name="description"
     content="Complete project portfolio of Mashrur Shakhawat Sayan including research, machine learning, MLOps, full stack development, robotics, assembly, and hardware projects."
   >
 
   <meta name="author" content="Mashrur Shakhawat Sayan">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#07111f">
+  <meta name="color-scheme" content="dark light">
 
-  <title>All Projects | Mashrur Shakhawat Sayan</title>
+  <!-- Confirm this matches your actual deployed URL (see index.html head for the same note). -->
+  <link rel="canonical" href="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/projects.html">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" sizes="180x180">
 
-  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:title" content="All Projects | Mashrur Shakhawat Sayan">
+  <meta property="og:description" content="Complete project portfolio: research, machine learning, MLOps, full stack development, robotics, assembly, and hardware projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/projects.html">
+  <meta property="og:image" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/assets/images/og-image.png">
+
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="stylesheet" href="css/style.css?v=19">
 </head>
 
 <body>
+
+  <!--
+    Shared icon sprite for the light-theme doodles used across this page
+    (archive hero, research, ML and AI, NLP, full stack, hardware).
+    Mirrors the sprite in index.html — SVG <symbol>/<use> can't be shared
+    across separate HTML documents, so the icons this page actually uses
+    are duplicated here, plus a handful of new ones specific to the
+    archive page. Pure inline markup, no images, no extra requests.
+  -->
+  <svg width="0" height="0" style="position:absolute; overflow:hidden;" aria-hidden="true">
+    <defs>
+      <symbol id="doodle-folder" viewBox="0 0 24 24">
+        <path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path>
+      </symbol>
+      <symbol id="doodle-magnifier" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5"></circle>
+        <line x1="15.3" y1="15.3" x2="21" y2="21"></line>
+      </symbol>
+      <symbol id="doodle-cloud" viewBox="0 0 24 24">
+        <path d="M7 18h11a4 4 0 0 0 .5-7.97A5.5 5.5 0 0 0 8.2 8.06 4 4 0 0 0 7 18z"></path>
+      </symbol>
+      <symbol id="doodle-droplet" viewBox="0 0 24 24">
+        <path d="M12 2c4 5 7 9 7 12.5A7 7 0 0 1 5 14.5C5 11 8 7 12 2z"></path>
+      </symbol>
+      <symbol id="doodle-brain" viewBox="0 0 24 24">
+        <path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-1.5 5.6A3 3 0 0 0 7 18a3 3 0 0 0 5-2V6a2 2 0 0 0-3-2z"></path>
+        <path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 1.5 5.6A3 3 0 0 1 17 18a3 3 0 0 1-5-2V6a2 2 0 0 1 3-2z"></path>
+      </symbol>
+      <symbol id="doodle-chat" viewBox="0 0 24 24">
+        <path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"></path>
+        <line x1="7" y1="9" x2="17" y2="9"></line>
+        <line x1="7" y1="12.5" x2="14" y2="12.5"></line>
+      </symbol>
+      <symbol id="doodle-browser" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <line x1="2" y1="9" x2="22" y2="9"></line>
+        <circle cx="5.5" cy="6.5" r="0.6"></circle>
+        <circle cx="8" cy="6.5" r="0.6"></circle>
+      </symbol>
+      <symbol id="doodle-microscope" viewBox="0 0 24 24">
+        <line x1="7" y1="21" x2="17" y2="21"></line>
+        <line x1="12" y1="21" x2="12" y2="17"></line>
+        <rect x="6" y="14.6" width="12" height="2.4" rx="1"></rect>
+        <circle cx="12" cy="8" r="2.3"></circle>
+        <path d="M9.3 11.7c-.8-2.6.3-4.8 2.2-6.2"></path>
+        <line x1="14" y1="3" x2="18" y2="7"></line>
+      </symbol>
+      <symbol id="doodle-flask" viewBox="0 0 24 24">
+        <path d="M9 2h6"></path>
+        <path d="M10 2v6.2L4.6 18.6A2 2 0 0 0 6.4 21.5h11.2a2 2 0 0 0 1.8-2.9L14 8.2V2"></path>
+        <line x1="7.6" y1="14" x2="16.4" y2="14"></line>
+      </symbol>
+      <symbol id="doodle-spark" viewBox="0 0 24 24">
+        <line x1="12" y1="2" x2="12" y2="8"></line>
+        <line x1="12" y1="16" x2="12" y2="22"></line>
+        <line x1="2" y1="12" x2="8" y2="12"></line>
+        <line x1="16" y1="12" x2="22" y2="12"></line>
+        <line x1="5" y1="5" x2="9" y2="9"></line>
+        <line x1="15" y1="15" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="15" y2="9"></line>
+        <line x1="9" y1="15" x2="5" y2="19"></line>
+      </symbol>
+      <symbol id="doodle-camera" viewBox="0 0 24 24">
+        <path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path>
+        <circle cx="12" cy="14" r="4"></circle>
+        <circle cx="18" cy="10.5" r="0.6"></circle>
+      </symbol>
+      <symbol id="doodle-chart" viewBox="0 0 24 24">
+        <line x1="3" y1="21" x2="3" y2="3"></line>
+        <line x1="3" y1="21" x2="21" y2="21"></line>
+        <polyline points="6,17 10,11 14,14 20,6"></polyline>
+      </symbol>
+      <symbol id="doodle-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3.2"></circle>
+        <path d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.1 4.9l-2.1 2.1M7 15l-2.1 2.1M19.1 19.1l-2.1-2.1M7 9 4.9 6.9"></path>
+      </symbol>
+      <symbol id="doodle-chip" viewBox="0 0 24 24">
+        <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+        <line x1="9" y1="3" x2="9" y2="7"></line>
+        <line x1="15" y1="3" x2="15" y2="7"></line>
+        <line x1="9" y1="17" x2="9" y2="21"></line>
+        <line x1="15" y1="17" x2="15" y2="21"></line>
+        <line x1="3" y1="9" x2="7" y2="9"></line>
+        <line x1="3" y1="15" x2="7" y2="15"></line>
+        <line x1="17" y1="9" x2="21" y2="9"></line>
+        <line x1="17" y1="15" x2="21" y2="15"></line>
+      </symbol>
+      <symbol id="doodle-wrench" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z"></path>
+      </symbol>
+      <symbol id="doodle-keyboard" viewBox="0 0 24 24">
+        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+        <circle cx="6" cy="10" r="0.6"></circle>
+        <circle cx="10" cy="10" r="0.6"></circle>
+        <circle cx="14" cy="10" r="0.6"></circle>
+        <circle cx="18" cy="10" r="0.6"></circle>
+        <rect x="6" y="13.4" width="12" height="2" rx="1"></rect>
+      </symbol>
+      <symbol id="doodle-code" viewBox="0 0 24 24">
+        <polyline points="8,7 3,12 8,17"></polyline>
+        <polyline points="16,7 21,12 16,17"></polyline>
+        <line x1="14" y1="4" x2="10" y2="20"></line>
+      </symbol>
+      <symbol id="doodle-document" viewBox="0 0 24 24">
+        <path d="M6 2h9l5 5v15H6z"></path>
+        <path d="M15 2v5h5"></path>
+        <line x1="9" y1="13" x2="17" y2="13"></line>
+        <line x1="9" y1="17" x2="15" y2="17"></line>
+      </symbol>
+      <symbol id="doodle-server" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="6" rx="1.5"></rect>
+        <rect x="3" y="14" width="18" height="6" rx="1.5"></rect>
+        <circle cx="7" cy="7" r="0.6"></circle>
+        <circle cx="7" cy="17" r="0.6"></circle>
+        <line x1="11" y1="7" x2="17" y2="7"></line>
+        <line x1="11" y1="17" x2="17" y2="17"></line>
+      </symbol>
+      <symbol id="doodle-robot" viewBox="0 0 24 24">
+        <rect x="5" y="9" width="14" height="10" rx="2"></rect>
+        <circle cx="9.5" cy="14" r="1.2"></circle>
+        <circle cx="14.5" cy="14" r="1.2"></circle>
+        <line x1="9" y1="19" x2="9" y2="21"></line>
+        <line x1="15" y1="19" x2="15" y2="21"></line>
+        <line x1="12" y1="9" x2="12" y2="5"></line>
+        <circle cx="12" cy="3.5" r="1.5"></circle>
+        <line x1="2" y1="13" x2="5" y2="13"></line>
+        <line x1="19" y1="13" x2="22" y2="13"></line>
+      </symbol>
+      <symbol id="doodle-circuit" viewBox="0 0 100 60">
+        <path d="M5 10H35V30H65V10H95M35 30V50H65"></path>
+        <circle cx="5" cy="10" r="3"></circle>
+        <circle cx="65" cy="10" r="3"></circle>
+        <circle cx="95" cy="10" r="3"></circle>
+        <circle cx="35" cy="50" r="3"></circle>
+        <circle cx="65" cy="50" r="3"></circle>
+      </symbol>
+      <symbol id="doodle-network" viewBox="0 0 100 80">
+        <line x1="15" y1="15" x2="50" y2="10"></line>
+        <line x1="15" y1="15" x2="20" y2="55"></line>
+        <line x1="50" y1="10" x2="85" y2="25"></line>
+        <line x1="50" y1="10" x2="55" y2="50"></line>
+        <line x1="20" y1="55" x2="55" y2="50"></line>
+        <line x1="55" y1="50" x2="85" y2="60"></line>
+        <line x1="85" y1="25" x2="55" y2="50"></line>
+        <circle cx="15" cy="15" r="4"></circle>
+        <circle cx="50" cy="10" r="4"></circle>
+        <circle cx="85" cy="25" r="4"></circle>
+        <circle cx="20" cy="55" r="4"></circle>
+        <circle cx="55" cy="50" r="4"></circle>
+        <circle cx="85" cy="60" r="4"></circle>
+      </symbol>
+      <symbol id="doodle-terminal" viewBox="0 0 100 70">
+        <rect x="2" y="2" width="96" height="66" rx="5"></rect>
+        <line x1="2" y1="17" x2="98" y2="17"></line>
+        <circle cx="11" cy="9.5" r="2"></circle>
+        <circle cx="19" cy="9.5" r="2"></circle>
+        <circle cx="27" cy="9.5" r="2"></circle>
+        <path d="M12 29L23 38L12 47"></path>
+        <line x1="29" y1="47" x2="55" y2="47"></line>
+      </symbol>
+      <symbol id="doodle-matrix" viewBox="0 0 60 100">
+        <line x1="6" y1="0" x2="6" y2="38" stroke-dasharray="3 5"></line>
+        <line x1="18" y1="14" x2="18" y2="70" stroke-dasharray="3 5"></line>
+        <line x1="30" y1="0" x2="30" y2="52" stroke-dasharray="3 5"></line>
+        <line x1="42" y1="24" x2="42" y2="88" stroke-dasharray="3 5"></line>
+        <line x1="54" y1="6" x2="54" y2="44" stroke-dasharray="3 5"></line>
+      </symbol>
+      <symbol id="doodle-chart-line" viewBox="0 0 220 120">
+        <line x1="4" y1="4" x2="4" y2="112"></line>
+        <line x1="4" y1="112" x2="216" y2="112"></line>
+        <polyline points="10,98 48,76 86,86 124,44 162,56 200,18"></polyline>
+        <circle cx="10" cy="98" r="3"></circle>
+        <circle cx="48" cy="76" r="3"></circle>
+        <circle cx="86" cy="86" r="3"></circle>
+        <circle cx="124" cy="44" r="3"></circle>
+        <circle cx="162" cy="56" r="3"></circle>
+        <circle cx="200" cy="18" r="3"></circle>
+      </symbol>
+    </defs>
+  </svg>
 
 <header class="site-header">
   <nav class="navbar container" aria-label="Projects page navigation">
@@ -61,6 +259,15 @@
 <main>
 
   <section class="section projects-hero" id="top">
+    <div class="section-doodles" aria-hidden="true">
+      <svg class="doodle doodle-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-folder"></use></svg>
+      <svg class="doodle doodle-magnifier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-magnifier"></use></svg>
+    </div>
+
+    <div class="section-doodles-dark" aria-hidden="true">
+      <canvas class="tech-canvas" data-mode="pathfind" data-density="1" data-speed="1"></canvas>
+    </div>
+
     <div class="container">
 
       <p class="section-label">Project Archive</p>
@@ -102,6 +309,18 @@
   </section>
 
   <section class="section section-muted" id="research">
+    <div class="section-doodles" aria-hidden="true">
+      <svg class="doodle doodle-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-microscope"></use></svg>
+      <svg class="doodle doodle-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-flask"></use></svg>
+      <svg class="doodle doodle-cloud" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-cloud"></use></svg>
+      <svg class="doodle doodle-droplet" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-droplet"></use></svg>
+    </div>
+
+    <div class="section-doodles-dark" aria-hidden="true">
+      <canvas class="tech-canvas" data-mode="network" data-density="1.9" data-speed="0.8"></canvas>
+      <svg class="chart-line-doodle" viewBox="0 0 220 120" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chart-line"></use></svg>
+    </div>
+
     <div class="container">
 
       <div class="section-heading">
@@ -112,7 +331,7 @@
       <div class="archive-grid">
 
         <article class="archive-card">
-          <img src="assets/projects/scoliosis-detection.jpg" alt="Explainable AI framework for scoliosis assessment">
+          <img src="assets/projects/scoliosis-detection.jpg" alt="Explainable AI framework for scoliosis assessment" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Medical AI Research</p>
@@ -142,7 +361,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/water-quality.jpg" alt="Water quality prediction research">
+          <img src="assets/projects/water-quality.jpg" alt="Water quality prediction research" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Environmental ML Research</p>
@@ -172,7 +391,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/erasure-coding.jpg" alt="Erasure coding policy prediction research">
+          <img src="assets/projects/erasure-coding.jpg" alt="Erasure coding policy prediction research" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Cloud Computing Research</p>
@@ -202,7 +421,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/federated-learning.jpg" alt="Federated learning research">
+          <img src="assets/projects/federated-learning.jpg" alt="Federated learning research" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Federated Learning Research</p>
@@ -236,6 +455,16 @@
   </section>
 
   <section class="section" id="ml-ai">
+    <div class="section-doodles" aria-hidden="true">
+      <svg class="doodle doodle-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-brain"></use></svg>
+      <svg class="doodle doodle-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chip"></use></svg>
+      <svg class="doodle doodle-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-gear"></use></svg>
+    </div>
+
+    <div class="section-doodles-dark" aria-hidden="true">
+      <canvas class="tech-canvas" data-mode="neural"></canvas>
+    </div>
+
     <div class="container">
 
       <div class="section-heading">
@@ -246,7 +475,7 @@
       <div class="archive-grid">
 
         <article class="archive-card">
-          <img src="assets/projects/kidney-classification.jpg" alt="Kidney disease classification MLOps pipeline">
+          <img src="assets/projects/kidney-classification.jpg" alt="Kidney disease classification MLOps pipeline" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Deep Learning and MLOps</p>
@@ -274,7 +503,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/chicken-disease.jpg" alt="Chicken disease classification MLOps pipeline">
+          <img src="assets/projects/chicken-disease.jpg" alt="Chicken disease classification MLOps pipeline" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Deep Learning and MLOps</p>
@@ -301,7 +530,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/rainfall.jpg" alt="Bangladesh rainfall forecasting project">
+          <img src="assets/projects/rainfall.jpg" alt="Bangladesh rainfall forecasting project" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Time Series Forecasting</p>
@@ -328,7 +557,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/bank-marketing.jpg" alt="Bank customer intelligence dashboard">
+          <img src="assets/projects/bank-marketing.jpg" alt="Bank customer intelligence dashboard" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Predictive Analytics</p>
@@ -355,7 +584,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/bangla-ocr.png" alt="Bangla handwritten character recognition">
+          <img src="assets/projects/bangla-ocr.png" alt="Bangla handwritten character recognition" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Computer Vision</p>
@@ -381,7 +610,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/student-performance.jpg" alt="Student performance prediction system">
+          <img src="assets/projects/student-performance.jpg" alt="Student performance prediction system" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">ML Web App</p>
@@ -407,7 +636,7 @@
         </article>
 
         <article class="archive-card">
-         <img src="assets/projects/sco.png" alt="Deep learning based scoliosis detection">
+         <img src="assets/projects/sco.png" alt="Deep learning based scoliosis detection" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Medical Image Classification</p>
@@ -438,6 +667,15 @@
   </section>
 
   <section class="section section-muted" id="nlp">
+    <div class="section-doodles" aria-hidden="true">
+      <svg class="doodle doodle-chat" viewBox="0 0 24 24" fill="currentColor"><use href="#doodle-chat"></use></svg>
+      <svg class="doodle doodle-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-document"></use></svg>
+    </div>
+
+    <div class="section-doodles-dark" aria-hidden="true">
+      <canvas class="tech-canvas" data-mode="matrix" data-density="1.1" data-speed="1.1"></canvas>
+    </div>
+
     <div class="container">
 
       <div class="section-heading">
@@ -448,7 +686,7 @@
       <div class="archive-grid">
 
         <article class="archive-card">
-          <img src="assets/projects/ai-chatbot.jpg" alt="Document intelligence chatbot">
+          <img src="assets/projects/ai-chatbot.jpg" alt="Document intelligence chatbot" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Document AI</p>
@@ -474,7 +712,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/ai-pdf-reader.png" alt="PDF question answering system">
+          <img src="assets/projects/ai-pdf-reader.png" alt="PDF question answering system" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">PDF Question Answering</p>
@@ -500,7 +738,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/bangla-song.png" alt="Bangla song lyrics sequential modelling">
+          <img src="assets/projects/bangla-song.png" alt="Bangla song lyrics sequential modelling" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Sequential Modelling</p>
@@ -530,6 +768,24 @@
   </section>
 
   <section class="section" id="fullstack">
+    <div class="section-doodles" aria-hidden="true">
+      <svg class="doodle doodle-browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-browser"></use></svg>
+      <svg class="doodle doodle-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-keyboard"></use></svg>
+      <svg class="doodle doodle-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-code"></use></svg>
+    </div>
+
+    <div class="section-doodles-dark" aria-hidden="true">
+      <div class="code-window" aria-hidden="true">
+        <div class="code-window-bar"><span></span><span></span><span></span></div>
+        <div class="code-window-body">
+          <span class="code-line" style="--w: 16ch;">const app = init()</span>
+          <span class="code-line" style="--w: 19ch;">app.use(router)</span>
+          <span class="code-line" style="--w: 13ch;">app.listen(3000)</span>
+          <span class="code-line" style="--w: 15ch;">return response</span>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
 
       <div class="section-heading">
@@ -540,7 +796,7 @@
       <div class="archive-grid">
 
         <article class="archive-card">
-          <img src="assets/projects/street-kids.jpg" alt="Street kids assistance platform">
+          <img src="assets/projects/street-kids.jpg" alt="Street kids assistance platform" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Social Impact Platform</p>
@@ -566,7 +822,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/disaster-resource.jpg" alt="Disaster resource allocation platform">
+          <img src="assets/projects/disaster-resource.jpg" alt="Disaster resource allocation platform" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Emergency Management</p>
@@ -592,7 +848,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/emergency-system.jpg" alt="Emergency crew allocation system">
+          <img src="assets/projects/emergency-system.jpg" alt="Emergency crew allocation system" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Dispatch System</p>
@@ -618,7 +874,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/animal.jpeg" alt="Animal shelter management system">
+          <img src="assets/projects/animal.jpeg" alt="Animal shelter management system" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Management System</p>
@@ -643,7 +899,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/annapurna.jpg" alt="Annapurna web project">
+          <img src="assets/projects/annapurna.jpg" alt="Annapurna web project" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Web Application</p>
@@ -668,7 +924,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/fertilizer-dashboard.jpg" alt="Agricultural fertilizer analytics dashboard">
+          <img src="assets/projects/fertilizer-dashboard.jpg" alt="Agricultural fertilizer analytics dashboard" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Dashboard</p>
@@ -693,7 +949,7 @@
         </article>
 
         <article class="archive-card">
-          <img src="assets/projects/stopwatch.png" alt="JavaScript utility applications">
+          <img src="assets/projects/stopwatch.png" alt="JavaScript utility applications" loading="lazy" decoding="async">
 
           <div class="archive-card-content">
             <p class="project-category">Frontend Mini Apps</p>
@@ -725,6 +981,16 @@
   </section>
 
   <section class="section section-muted" id="hardware">
+  <div class="section-doodles" aria-hidden="true">
+    <svg class="doodle doodle-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-robot"></use></svg>
+    <svg class="doodle doodle-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-server"></use></svg>
+    <svg class="doodle doodle-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-gear"></use></svg>
+  </div>
+
+  <div class="section-doodles-dark" aria-hidden="true">
+    <svg class="tech-doodle tech-doodle-circuit" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-circuit"></use></svg>
+  </div>
+
   <div class="container">
 
     <div class="section-heading">
@@ -826,14 +1092,127 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-layout">
-    <p>© <span id="current-year"></span> Mashrur Shakhawat Sayan</p>
-    <p>ORCID: 0009-0003-2556-075X</p>
-    <a href="#top">Back to top</a>
+  <div class="container footer-main">
+
+    <div class="footer-brand">
+      <a class="footer-logo" href="#top" aria-label="Back to top of this page">
+        MSS
+      </a>
+
+      <p>
+        Machine learning engineer and software developer building
+        explainable AI, deployable ML systems, and practical software.
+      </p>
+
+      <div class="footer-socials" aria-label="Professional profiles">
+        <a
+          class="footer-social-link"
+          href="https://github.com/Mashrur-Shakhawat-Sayan"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit GitHub profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+          </svg>
+        </a>
+
+        <a
+          class="footer-social-link"
+          href="https://www.linkedin.com/in/mashrur-shakhawat-0b628127a/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit LinkedIn profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 8.5H3.56V19h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.25 6.92 1.96 1.96 0 0 0 5.25 3ZM20.44 13c0-3.16-1.69-4.63-3.94-4.63a3.42 3.42 0 0 0-3.09 1.7V8.5h-3.38c.04 1.04 0 10.5 0 10.5h3.38v-5.86c0-.31.02-.63.11-.85.24-.63.8-1.28 1.73-1.28 1.22 0 1.71.93 1.71 2.3V19h3.38l.1-6Z"/>
+          </svg>
+        </a>
+
+        <a
+          class="footer-social-link"
+          href="https://orcid.org/0009-0003-2556-075X"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit ORCID profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8.2 7.3h1.4v1.4H8.2V7.3Zm0 3h1.4v6.4H8.2v-6.4Zm3.4 0h2.5c2.4 0 3.9 1.3 3.9 3.2 0 2-1.5 3.2-3.9 3.2h-2.5v-6.4Zm1.4 1.2v4h1.1c1.6 0 2.5-.7 2.5-2s-.9-2-2.5-2H13Z" class="footer-orcid-mark"/>
+          </svg>
+        </a>
+
+        <a
+          class="footer-social-link"
+          href="mailto:shakhawatsayan123@gmail.com"
+          aria-label="Send an email"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18v14H3V5Zm2 2v.4l7 4.7 7-4.7V7H5Zm14 10V9.8l-7 4.7-7-4.7V17h14Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-column" aria-label="Footer navigation">
+      <h2>Explore</h2>
+      <a href="index.html">Portfolio Home</a>
+      <a href="#research">Research</a>
+      <a href="#ml-ai">ML and AI</a>
+      <a href="#nlp">NLP</a>
+      <a href="#fullstack">Full Stack</a>
+      <a href="#hardware">Hardware</a>
+    </nav>
+
+    <div class="footer-column">
+      <h2>Connect</h2>
+      <a href="mailto:shakhawatsayan123@gmail.com">Email Me</a>
+      <a
+        href="https://www.linkedin.com/in/mashrur-shakhawat-0b628127a/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="https://orcid.org/0009-0003-2556-075X"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ORCID
+      </a>
+      <a href="assets/cv/Mashrur-Shakhawat-Sayan-CV.pdf" download>
+        Download CV
+      </a>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p>
+      © <span id="current-year"></span> Mashrur Shakhawat Sayan
+    </p>
+
+    <p>
+      Built with HTML, CSS, and JavaScript
+    </p>
   </div>
 </footer>
 
+<button
+  class="back-to-top"
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="m12 5 7 7-1.4 1.4-4.6-4.6V20h-2V8.8l-4.6 4.6L5 12l7-7Z"/>
+  </svg>
+</button>
+
 <script src="js/script.js"></script>
+<script src="js/tech-graphics.js"></script>
 
 </body>
 </html>
