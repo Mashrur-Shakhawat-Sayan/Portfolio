@@ -3484,53 +3484,154 @@ a:focus-visible {
   font-size: 0.92rem;
 }
 
-/* Journey: compass, backpack, idea bulb */
-.doodle-journey-compass {
-  top: 8%;
-  right: 5%;
-  width: clamp(40px, 6.4vw, 58px);
-  color: rgba(184, 134, 11, 0.42);
-  animation: doodleSpinSlow 18s linear infinite;
+
+/* ==========================================================================
+   Journey and Beyond the Code art: plain SVG + CSS, no canvas or JS.
+   ========================================================================== */
+#journey,
+.activities-section {
+  --art-a: rgba(56, 189, 248, 0.5);
+  --art-b: rgba(52, 211, 153, 0.55);
+  --art-soft: rgba(148, 163, 184, 0.1);
 }
 
-.doodle-journey-backpack {
-  bottom: 7%;
-  left: 4%;
-  width: clamp(34px, 5.6vw, 50px);
-  color: rgba(92, 69, 38, 0.34);
-  animation: doodleFloatSlow 8s ease-in-out infinite;
+body.light-theme #journey,
+body.light-theme .activities-section {
+  --art-a: rgba(194, 87, 12, 0.45);
+  --art-b: rgba(184, 134, 11, 0.55);
+  --art-soft: rgba(92, 69, 38, 0.07);
 }
 
-.doodle-journey-bulb {
-  bottom: 12%;
-  right: 7%;
-  width: clamp(28px, 4.6vw, 40px);
-  color: rgba(194, 87, 12, 0.38);
-  animation: doodlePulseSoft 4.5s ease-in-out infinite;
+.journey-art,
+.acts-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-/* Beyond the code: chess piece, scout tent, award ribbon */
-.doodle-acts-chess {
+/* Journey: a winding road with milestones and a paper plane */
+.journey-art svg {
+  position: absolute;
   top: 7%;
-  left: 46%;
-  width: clamp(34px, 5.6vw, 50px);
-  color: rgba(92, 69, 38, 0.34);
-  animation: doodleFloatSlow2 9s ease-in-out infinite;
+  right: 3%;
+  width: clamp(240px, 35vw, 480px);
+  height: auto;
 }
 
-.doodle-acts-tent {
-  bottom: 6%;
-  left: 4%;
-  width: clamp(38px, 6vw, 54px);
-  color: rgba(52, 120, 80, 0.36);
-  animation: doodleFloatSlow 8.5s ease-in-out infinite;
+.journey-road {
+  stroke: var(--art-a);
+  stroke-width: 2;
+  stroke-dasharray: 2 9;
+  stroke-linecap: round;
+  opacity: 0.7;
 }
 
-.doodle-acts-ribbon {
-  bottom: 8%;
-  right: 5%;
-  width: clamp(30px, 5vw, 44px);
-  color: rgba(194, 87, 12, 0.4);
-  transform-origin: top center;
-  animation: doodleSway 5s ease-in-out infinite;
+.journey-road-progress {
+  stroke: var(--art-b);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: journeyDraw 12s linear infinite;
+}
+
+.journey-stop {
+  fill: var(--art-b);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: journeyStop 6s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+
+.journey-stop-end {
+  fill: var(--art-a);
+}
+
+.journey-plane {
+  fill: var(--art-a);
+}
+
+@keyframes journeyDraw {
+  0% { stroke-dashoffset: 100; opacity: 1; }
+  85% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes journeyStop {
+  0%, 70%, 100% { transform: scale(1); opacity: 0.55; }
+  80% { transform: scale(1.7); opacity: 1; }
+}
+
+/* Beyond the code: faded chessboard, a hopping knight, twinkling stars */
+.acts-board {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: clamp(240px, 34vw, 460px);
+  aspect-ratio: 1;
+  background:
+    conic-gradient(var(--art-soft) 25%, transparent 0 50%, var(--art-soft) 0 75%, transparent 0)
+    0 0 / 46px 46px;
+  -webkit-mask-image: radial-gradient(circle at 0 100%, #000 15%, transparent 70%);
+  mask-image: radial-gradient(circle at 0 100%, #000 15%, transparent 70%);
+}
+
+.acts-knight {
+  position: absolute;
+  top: 7%;
+  left: 45%;
+  width: clamp(30px, 4.2vw, 44px);
+  color: var(--art-a);
+  animation: knightHop 9s ease-in-out infinite;
+}
+
+@keyframes knightHop {
+  0%, 18% { transform: translate(0, 0); }
+  28%, 46% { transform: translate(46px, -10px); }
+  56%, 74% { transform: translate(46px, 36px); }
+  84%, 100% { transform: translate(0, 0); }
+}
+
+.acts-star {
+  position: absolute;
+  fill: var(--art-b);
+  animation: starTwinkle 4s ease-in-out infinite;
+}
+
+.acts-star-a { top: 8%; right: 6%; width: 26px; }
+.acts-star-b { top: 15%; right: 3%; width: 16px; animation-delay: 1.3s; }
+.acts-star-c { bottom: 6%; right: 5%; width: 20px; animation-delay: 2.6s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 0.9; transform: scale(1.1) rotate(20deg); }
+}
+
+@media (max-width: 760px) {
+  .journey-art svg {
+    top: 3%;
+    width: 70vw;
+    opacity: 0.6;
+  }
+
+  .acts-knight {
+    left: auto;
+    right: 18%;
+    top: 3%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-road-progress,
+  .journey-stop,
+  .acts-knight,
+  .acts-star {
+    animation: none;
+  }
+
+  .journey-road-progress {
+    stroke-dashoffset: 0;
+  }
 }

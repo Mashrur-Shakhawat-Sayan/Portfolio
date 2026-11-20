@@ -2020,14 +2020,21 @@
 
     <!-- Journey -->
     <section class="section" id="journey">
-      <div class="section-doodles" aria-hidden="true">
-        <svg class="doodle doodle-journey-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-compass"></use></svg>
-        <svg class="doodle doodle-journey-backpack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-backpack"></use></svg>
-        <svg class="doodle doodle-journey-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-lightbulb"></use></svg>
-      </div>
-
-      <div class="section-doodles-dark" aria-hidden="true">
-        <canvas class="tech-canvas" data-mode="pathfind" data-density="0.8" data-speed="0.9"></canvas>
+      <div class="journey-art" aria-hidden="true">
+        <svg viewBox="0 0 600 220" fill="none">
+          <path id="journey-road" class="journey-road" d="M10 200 C 90 200, 110 120, 190 130 S 290 190, 350 120 S 450 40, 520 70 S 580 40, 592 14"></path>
+          <path class="journey-road-progress" pathLength="100" d="M10 200 C 90 200, 110 120, 190 130 S 290 190, 350 120 S 450 40, 520 70 S 580 40, 592 14"></path>
+          <circle class="journey-stop" cx="10" cy="200" r="5"></circle>
+          <circle class="journey-stop" cx="190" cy="130" r="5" style="--d: 1.2s"></circle>
+          <circle class="journey-stop" cx="350" cy="120" r="5" style="--d: 2.4s"></circle>
+          <circle class="journey-stop" cx="520" cy="70" r="5" style="--d: 3.6s"></circle>
+          <circle class="journey-stop journey-stop-end" cx="592" cy="14" r="6" style="--d: 4.8s"></circle>
+          <path class="journey-plane" d="M-8 -5 L9 0 L-8 5 L-4 0 Z">
+            <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#journey-road"></mpath>
+            </animateMotion>
+          </path>
+        </svg>
       </div>
 
       <div class="container">
@@ -2122,14 +2129,16 @@
 
     <!-- Activities -->
     <section class="section section-muted activities-section" id="activities">
-      <div class="section-doodles" aria-hidden="true">
-        <svg class="doodle doodle-acts-chess" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-chess"></use></svg>
-        <svg class="doodle doodle-acts-tent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-tent"></use></svg>
-        <svg class="doodle doodle-acts-ribbon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#doodle-ribbon"></use></svg>
-      </div>
-
-      <div class="section-doodles-dark" aria-hidden="true">
-        <canvas class="tech-canvas" data-mode="neural" data-density="1.2" data-speed="0.7"></canvas>
+      <div class="acts-art" aria-hidden="true">
+        <div class="acts-board"></div>
+        <svg class="acts-knight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 20.5h10"></path>
+          <path d="M8.5 20.5c.3-2.6 1.6-4.4 3.5-5.8-1.9.2-3.6-.4-4.4-1.6-.6-.9.1-2 1-2.6l3.4-2.4c.6-1.4 1.7-2.6 3.3-3 1.9 1.5 3 4.2 3 7.4 0 3.2-1.2 5.6-1.5 8"></path>
+          <circle cx="13.6" cy="8" r=".6" fill="currentColor"></circle>
+        </svg>
+        <svg class="acts-star acts-star-a" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"></path></svg>
+        <svg class="acts-star acts-star-b" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"></path></svg>
+        <svg class="acts-star acts-star-c" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"></path></svg>
       </div>
 
       <div class="container">
