@@ -3483,3 +3483,54 @@ a:focus-visible {
   margin-top: 16px;
   font-size: 0.92rem;
 }
+
+/* Journey: compass, backpack, idea bulb */
+.doodle-journey-compass {
+  top: 8%;
+  right: 5%;
+  width: clamp(40px, 6.4vw, 58px);
+  color: rgba(184, 134, 11, 0.42);
+  animation: doodleSpinSlow 18s linear infinite;
+}
+
+.doodle-journey-backpack {
+  bottom: 7%;
+  left: 4%;
+  width: clamp(34px, 5.6vw, 50px);
+  color: rgba(92, 69, 38, 0.34);
+  animation: doodleFloatSlow 8s ease-in-out infinite;
+}
+
+.doodle-journey-bulb {
+  bottom: 12%;
+  right: 7%;
+  width: clamp(28px, 4.6vw, 40px);
+  color: rgba(194, 87, 12, 0.38);
+  animation: doodlePulseSoft 4.5s ease-in-out infinite;
+}
+
+/* Beyond the code: chess piece, scout tent, award ribbon */
+.doodle-acts-chess {
+  top: 7%;
+  left: 46%;
+  width: clamp(34px, 5.6vw, 50px);
+  color: rgba(92, 69, 38, 0.34);
+  animation: doodleFloatSlow2 9s ease-in-out infinite;
+}
+
+.doodle-acts-tent {
+  bottom: 6%;
+  left: 4%;
+  width: clamp(38px, 6vw, 54px);
+  color: rgba(52, 120, 80, 0.36);
+  animation: doodleFloatSlow 8.5s ease-in-out infinite;
+}
+
+.doodle-acts-ribbon {
+  bottom: 8%;
+  right: 5%;
+  width: clamp(30px, 5vw, 44px);
+  color: rgba(194, 87, 12, 0.4);
+  transform-origin: top center;
+  animation: doodleSway 5s ease-in-out infinite;
+}
