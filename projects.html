@@ -18,7 +18,7 @@
   <meta name="color-scheme" content="dark light">
 
   <!-- Confirm this matches your actual deployed URL (see index.html head for the same note). -->
-  <link rel="canonical" href="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/projects.html">
+  <link rel="canonical" href="https://mashrur-shakhawat-sayan.github.io/Portfolio/projects.html">
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
@@ -27,12 +27,12 @@
   <meta property="og:title" content="All Projects | Mashrur Shakhawat Sayan">
   <meta property="og:description" content="Complete project portfolio: research, machine learning, MLOps, full stack development, robotics, assembly, and hardware projects.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/projects.html">
-  <meta property="og:image" content="https://mashrur-shakhawat-sayan.github.io/Portfolio-V2/assets/images/og-image.png">
+  <meta property="og:url" content="https://mashrur-shakhawat-sayan.github.io/Portfolio/projects.html">
+  <meta property="og:image" content="https://mashrur-shakhawat-sayan.github.io/Portfolio/assets/images/og-image.png">
 
   <script>document.documentElement.classList.add("js");</script>
 
-  <link rel="stylesheet" href="css/style.css?v=19">
+  <link rel="stylesheet" href="css/style.css?v=22">
 </head>
 
 <body>
@@ -387,6 +387,69 @@
               <a class="button button-secondary" href="https://github.com/Mashrur-Shakhawat-Sayan/Water-pollution-Research" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a class="button button-primary" href="assets/reports/water-quality-report.pdf" target="_blank" rel="noopener noreferrer">Read Report</a>
             </div>
+
+            <details class="archive-details">
+              <summary>Read the full case study</summary>
+              <div class="archive-details-body">
+                <p>
+                  This project started as a university course assignment and
+                  ended up teaching me more about research integrity than
+                  about water chemistry.
+                </p>
+                <p>
+                  The original pipeline predicted the CCME Water Quality
+                  Index from the same parameters used to calculate it, and
+                  the results looked spectacular &mdash; R&sup2; between 0.99
+                  and 0.999. Too spectacular. A quick rule based
+                  reimplementation of the CCME formula reproduced those
+                  "predictions" with zero error: the model wasn't learning
+                  anything, it was just rediscovering its own target.
+                  Digging further turned up a second bug &mdash; a silent
+                  date parsing failure that had been discarding 56.5% of the
+                  records, which quietly broke the chronological train/test
+                  split a time series task depends on. High accuracy had
+                  been masking two real problems at once.
+                </p>
+                <p>
+                  So I rebuilt the task from scratch: instead of predicting a
+                  site's current reading, the model forecasts its next one,
+                  under a strict chronological split, benchmarked against a
+                  persistence baseline (tomorrow = today) that turned out to
+                  be a genuinely strong competitor at R&sup2; = 0.502.
+                  Against that honest baseline, the best centralized model
+                  &mdash; a gradient boosted ensemble, compared against
+                  random forest, a linear baseline, and a small MLP &mdash;
+                  reached <strong>R&sup2; = 0.695, roughly a 7% improvement
+                  over persistence</strong>, on a dataset of 2.77 million
+                  surface water records spanning 1940 to 2023 across
+                  England, Ireland, the USA, Canada, and China.
+                </p>
+                <p>
+                  I then implemented federated learning from scratch in
+                  NumPy (FedAvg, FedProx, FedAdam), treating the five
+                  countries as non-IID clients &mdash; England holds 87.7% of
+                  the data, China just 0.06%. FL roughly matched centralized
+                  performance in classification and on the dominant client,
+                  but degraded badly on small clients; a validation
+                  checkpointed personalization pass recovered most of that
+                  gap, cutting MAE on the smallest client by 66%. I stress
+                  tested the full pipeline with a site disjoint holdout, a
+                  feature leakage ablation, bootstrapped confidence
+                  intervals, and seed variance checks across the tree
+                  ensembles, since a result that only holds under one random
+                  seed isn't a result.
+                </p>
+                <p>
+                  One honest caveat: this is "federated" in architecture, not
+                  in guarantee &mdash; there's no formal differential privacy
+                  mechanism yet, and small client instability remains the
+                  rough edge worth solving next. Built in Python with
+                  scikit-learn, hand rolled NumPy federated learning, an
+                  earlier Flower/PyTorch iteration, and written up in IEEE
+                  LaTeX format as the paper comes together.
+                </p>
+              </div>
+            </details>
           </div>
         </article>
 
@@ -446,6 +509,82 @@
               <a class="button button-secondary" href="https://github.com/Mashrur-Shakhawat-Sayan/MNIST-Federated-Learning" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a class="button button-primary" href="assets/reports/federated-learning-report.pdf" target="_blank" rel="noopener noreferrer">Read Report</a>
             </div>
+          </div>
+        </article>
+
+        <article class="archive-card">
+          <div class="archive-stat-visual" role="img" aria-label="84 to 96 percent of tokens spent on failed agent runs">
+            <span class="archive-stat-number">84&ndash;96%</span>
+            <span class="archive-stat-label">of tokens spent on runs that failed</span>
+          </div>
+
+          <div class="archive-card-content">
+            <div class="project-topline">
+              <p class="project-category">AI Efficiency Research</p>
+              <p class="project-level">In Preparation</p>
+            </div>
+
+            <h3>AgentWaste: Wasted Work in Small Local LLM Coding Agents</h3>
+
+            <p>
+              An empirical study of how much compute small open source LLM
+              coding agents waste, whether doomed runs can be detected early,
+              and whether a runtime controller can cut that waste. All
+              experiments ran locally on a 6GB laptop GPU.
+            </p>
+
+            <div class="tag-list">
+              <span>LLM Agents</span>
+              <span>AI Efficiency</span>
+              <span>Empirical ML</span>
+              <span>Reproducible Research</span>
+            </div>
+
+            <div class="project-actions">
+              <span class="button button-secondary button-disabled" aria-disabled="true">Code available after publication</span>
+            </div>
+
+            <details class="archive-details">
+              <summary>Methodology and findings</summary>
+              <div class="archive-details-body">
+                <p>
+                  Prior work on token waste focused on frontier scale agents,
+                  where most runs succeed. Small local models (1 to 8B
+                  parameters) fail often, and nobody had measured where their
+                  compute goes or how to reduce it. I built a resumable,
+                  paired design agent harness in Python on top of Ollama,
+                  with native tool calling, sandboxed repo tools,
+                  deterministic task judges, per turn token telemetry, and
+                  GPU energy measurement via nvidia-smi.
+                </p>
+                <p>
+                  Across roughly 6,600 agent runs on 47 coding and repository
+                  tasks with 11 models from 6 developers (Qwen, Llama,
+                  Granite, Ministral, Phi, LFM), plus about 2,900 self
+                  estimate probes asking agents to predict their own failure,
+                  I compared a baseline agent, plan first prompting, and a
+                  runtime controller I designed to block repeated calls,
+                  force re-planning, and stop stuck runs. All hypotheses were
+                  pre-registered before data collection, with every protocol
+                  deviation logged, and results are backed by a task cluster
+                  bootstrap, a mixed effects logistic model, DeLong AUROC
+                  tests, and Holm correction.
+                </p>
+                <p>
+                  <strong>Most compute goes to runs that fail</strong> &mdash;
+                  84 to 96% of tokens on the Qwen models. The runtime
+                  controller cut tokens per successful task by 23% on those
+                  models with no loss in success rate, though the benefit
+                  tracks how often a model loops (Spearman &rho; = &minus;0.73
+                  across 10 models). Plan first prompting is strongly model
+                  dependent (+10 to &minus;16 points in success), larger
+                  models are far better at predicting their own failure
+                  (self estimate AUROC: 0.46 at 1.7B to 0.90 at 8B), and small
+                  agents under-verify &mdash; most never run the tests and
+                  tend to stop early with a text answer instead.
+                </p>
+              </div>
+            </details>
           </div>
         </article>
 

@@ -1,0 +1,3 @@
+# Local archives and working files, not part of the site
+*.zip
+Claude outputs/
