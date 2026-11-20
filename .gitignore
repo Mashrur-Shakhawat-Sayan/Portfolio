@@ -1,3 +1,5 @@
 # Local archives and working files, not part of the site
 *.zip
 Claude outputs/
+assets/certificates/HTML.pdf
+assets/certificates/Co-curricular/
